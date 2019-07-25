@@ -10,10 +10,19 @@ namespace Lesson1
             int y = 608;
             int z = 12;
 
-            // TODO: write a set of statements that computes the largest of the above values
-            // and prints it to the console in a friendly message.
+            int largest = x;
 
-            Console.WriteLine("Incomplete :(");
+            if (y > largest)
+            {
+                largest = y;
+            }
+
+            if (z > largest)
+            {
+                largest = z;
+            }
+
+            Console.WriteLine($"The largest is {largest}.");
         }
     }
 }
