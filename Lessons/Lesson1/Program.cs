@@ -19,14 +19,14 @@ namespace Lesson1
                     if (y > x || y > z)
                     {
 
-                        Console.WriteLine(x+y);
+                        Console.WriteLine("Sum of two largest values is: "+x+y);
 
                     }
                 
                 }
                 else
                 {
-                    Console.WriteLine(z+y);
+                    Console.WriteLine("Sum of two largest values is: "+z+y);
                 }
         }
             
