@@ -1,8 +1,9 @@
-﻿using System;
+﻿
+using System;
 
 namespace Lesson1
 {
-    class Program
+    class Lesson1
     {
         static void Main(string[] args)
         {
@@ -10,9 +11,24 @@ namespace Lesson1
             int y = 608;
             int z = 12;
 
-            // TODO
+            // TODO: write a set of statements that computes the largest of the above values
+            // and prints it to the console in a friendly message.
 
-            Console.WriteLine("Incomplete");
+                if (x > y || x > z)
+                {
+                    if (y > x || y > z)
+                    {
+
+                        Console.WriteLine(x+y);
+
+                    }
+                
+                }
+                else
+                {
+                    Console.WriteLine(z+y);
+                }
         }
+            
     }
 }
