@@ -1,4 +1,4 @@
-﻿
+
 using System;
 
 namespace Lesson1
@@ -14,21 +14,7 @@ namespace Lesson1
             // TODO: write a set of statements that computes the largest of the above values
             // and prints it to the console in a friendly message.
 
-                if (x > y || x > z)
-                {
-                    if (y > x || y > z)
-                    {
 
-                        Console.WriteLine("Sum of two largest values is: "+x+y);
+                        Console.WriteLine("incomplte:() ");
 
-                    }
-                
-                }
-                else
-                {
-                    Console.WriteLine("Sum of two largest values is: "+z+y);
-                }
-        }
-            
-    }
-}
+
