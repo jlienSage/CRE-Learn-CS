@@ -6,12 +6,18 @@ namespace Lesson2
     {
         static void Main(string[] args)
         {
-            var palindrome = args[0].ToCharArray();
+            String[] newArray = {"palindrome","emordilap"};
 
-            // TODO: determine whether or not "palindrome" is, in fact, a palindrome.
-            // Print a friendly message.
-
-            Console.WriteLine("Incomplete :(");
+            if (newArray[0] == newArray[1])
+            {
+                Console.WriteLine("palindrome is in fact a palindrome.");
+                Console.WriteLine(newArray[0]+" = "+newArray[1]);
+            }
+            else
+            {
+                Console.WriteLine("No palindrome is not a palindrome.");
+                 Console.WriteLine(newArray[0]+" != "+newArray[1]);
+            }
         }
     }
 }
