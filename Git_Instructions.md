@@ -1,5 +1,7 @@
 # Git commands
 
+Where 'Name' is your name.
+
 ## To submit homework
 
 `git commit -a -m "My submission message."`
