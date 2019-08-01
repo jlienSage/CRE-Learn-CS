@@ -8,8 +8,7 @@ namespace Lesson2
         {
             var palindrome = args[0].ToCharArray();
 
-            // TODO: determine whether or not "palindrome" is, in fact, a palindrome.
-            // Print a friendly message.
+            // changed.
 
             Console.WriteLine("Incomplete :(");
         }
