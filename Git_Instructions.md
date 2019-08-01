@@ -2,18 +2,19 @@
 
 ## To submit homework
 
-git commit -a -m "My submission message."
+`git commit -a -m "My submission message."`
 
-git push origin Name
+`git push origin Name`
+
 
 ## To download next weeks homework
 
-git checkout master
+`git checkout master`
 
-git pull
+`git pull`
 
-git checkout Name
+`git checkout Name`
 
-git merge master
+`git merge master`
 
-git push origin Name
+`git push origin Name`
