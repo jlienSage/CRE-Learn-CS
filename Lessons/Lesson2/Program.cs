@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿// TODO: determine whether or not "palindrome" is, in fact, a palindrome.
+=======
+// TODO: determine whether or not "palindrome" is, in fact, a palindrome.
+>>>>>>> fbed8c68348e792f889a67c6ef1af516cd1c1843
 // Print a friendly message.
 using System;
 
