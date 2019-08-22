@@ -1,4 +1,6 @@
-﻿using System;
+﻿// TODO: determine whether or not "palindrome" is, in fact, a palindrome.
+// Print a friendly message.
+using System;
 
 namespace Lesson2
 {
@@ -6,18 +8,31 @@ namespace Lesson2
     {
         static void Main(string[] args)
         {
-            String[] newArray = {"palindrome","emordilap"};
+            //creating input portion for string a
+           string a = string.Empty;
+           Console.WriteLine("Please enter a string:");
+           a = Console.ReadLine();
 
-            if (newArray[0] == newArray[1])
-            {
-                Console.WriteLine("palindrome is in fact a palindrome.");
-                Console.WriteLine(newArray[0]+" = "+newArray[1]);
-            }
-            else
-            {
-                Console.WriteLine("No palindrome is not a palindrome.");
-                 Console.WriteLine(newArray[0]+" != "+newArray[1]);
-            }
+            //creating my array of char
+            //reversing string
+           char[] palindrome = a.ToCharArray();
+           Array.Reverse(palindrome);
+           string b = new string(palindrome);
+
+
+            //comparing the strings.. outputting friendly message
+           if (a==b)
+           {
+                Console.WriteLine("Yes, the text entered is a palindrome");        
+
+           }
+           else
+           {
+                Console.WriteLine("No, the text entered is not a palindrome.");
+
+           }
+            
         }
+
     }
 }
