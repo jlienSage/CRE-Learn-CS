@@ -6,11 +6,22 @@ namespace Lesson2
     {
         static void Main(string[] args)
         {
-            var palindrome = args[0].ToCharArray();
+            foreach(string word in args)
+            {
+                char[] palindrome = word.ToCharArray();
 
-            // changed.
+                bool isPalindrome = true;
+                for(int i = 0, j = palindrome.Length - 1; i <= palindrome.Length / 2; i++, j--)
+                {
+                    if (palindrome[i] != palindrome[j])
+                    {
+                        isPalindrome = false;
+                        break;
+                    }
+                }
 
-            Console.WriteLine("Incomplete :(");
+                Console.WriteLine(isPalindrome ? $"{word} is a palindrome" : $"{word} is not a palindrome.");
+            }
         }
     }
 }
