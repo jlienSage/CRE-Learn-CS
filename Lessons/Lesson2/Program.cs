@@ -6,12 +6,45 @@ namespace Lesson2
     {
         static void Main(string[] args)
         {
-            var palindrome = args[0].ToCharArray();
+            var palindrome = args[2].ToCharArray();
+            string palindrome_string = args[2];
 
-            // TODO: determine whether or not "palindrome" is, in fact, a palindrome.
-            // Print a friendly message.
+            //Output the argument
+            Console.WriteLine ("Your input: " + "\"" + palindrome_string + "\"");
+            
+            //Initialize variables
+            int frontIndex = 0;
+            int backIndex = palindrome.Length -1;
+            bool successfulMatch = true;
 
-            Console.WriteLine("Incomplete :(");
+            for (   
+                    frontIndex = 0, backIndex = palindrome.Length -1;
+                    frontIndex < backIndex;
+                    frontIndex++, backIndex--
+                )
+                
+                    {
+                        if (palindrome[frontIndex] == palindrome[backIndex])
+                    
+                            {   
+                                //do nothing
+                            }
+                        else
+                            {
+                                successfulMatch = false;
+                                break;
+                            }
+                    }
+
+                    if (successfulMatch == true)
+                    {
+                        Console.WriteLine("Yes, " + "\"" + palindrome_string + "\"" + " is a palindrome.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No, " + "\"" + palindrome_string + "\"" + " is not a palindrome");
+                    }
+            
         }
     }
 }
