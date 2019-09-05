@@ -4,19 +4,56 @@ namespace Lesson3
 {
     class Program
     {
-        static void Main(string[] args)
+                  
+         private static void Main(string[] args)
         {
-            /*            
-                Create a class that represents a broken calculator, how it is broken is up to you, get creative!
-                - The class should be able to be configured upon initilization with a value of your choice
-                    that adversly affects its funcionality in some way.
-                    (e.g. all multiplications are off by some factor, or it prints something to the Console when certain values are entered, etc.)
-                    This configuration should be accessible outside the class BUT NOT MODIFIABLE.
-                - Your calculator should have methods for multiplication, addition, subtraction and division.
-                - Your calculator should have a property representing the current value, which can be cleared.
-
-                Demonstrate your class's functionality by utilizing it within this Main() method.
-            */
+            double first, second, result;
+             
+            Console.Write("Enter first value: ");
+            first = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter second value: ");
+            second = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter operator (+, -, *, /): ");
+            char op = (char)Console.Read();
+                               
+            switch(op)
+            {
+                case '+':
+                    result = first + second;
+                    Console.WriteLine("{0} + {1} = {2}", first, second, result);
+                    if (first == second)
+                    Console.WriteLine("Why didn't you multiply by 2 silly!");
+                    break;
+                 
+                case '-':
+                    result = first - second;
+                    Console.WriteLine("{0} - {1} = {2}", first, second, result);
+                    break;
+                 
+                case '*':
+                    result = first * second;
+                    Console.WriteLine("{0} * {1} = {2}", first, second, result);
+                    if (first == second) 
+                    Console.WriteLine("You have twins!");
+                    if (second == result)
+                    Console.WriteLine("42 is the answer of life and the wrong answer to your question!");
+                    break;
+                 
+                case '/':
+                    result = first / second;
+                    Console.WriteLine("{0} / {1} = {2}", first, second, result);
+                    if (result < first) 
+                    Console.WriteLine("You are greedy!");
+                    break;
+ 
+                default:
+                    Console.WriteLine("Invalid Operator");
+                    break;
+                        
+            }
         }
     }
 }
+        
+
+        
