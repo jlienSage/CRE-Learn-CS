@@ -26,7 +26,6 @@ namespace Lesson3
             Console.WriteLine("{0} * {1} = {2}", first, second, result);
             if (first == second)
                 Console.WriteLine("You have twins!");
-            // Console.WriteLine("result"); need to figure out how to multiply result by 2
             if (first != second)
             Console.WriteLine(result = result * 2);
             Console.WriteLine("You now have double trouble");
