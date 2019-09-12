@@ -9,9 +9,9 @@ namespace Lesson3
         public static void Main(string[] args)
         {
             double first, second, result;
+            char op;
 
             Console.Write("Enter first value: ");
-            char op; 
             first = Convert.ToDouble(Console.ReadLine());
             Console.Write("Enter second value: ");
             second = Convert.ToDouble(Console.ReadLine());
