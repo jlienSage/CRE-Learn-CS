@@ -2,10 +2,17 @@
 
 namespace Lesson3
 {
-    class Program
+    class Program       
     {
         static void Main(string[] args)
         {
+            Calculator calc = new Calculator ();
+            calc.Add(10);
+            calc.Multiply(2);
+            calc.Subtract(25);
+            calc.Divide(4);
+
+
             /*            
                 Create a class that represents a broken calculator, how it is broken is up to you, get creative!
                 - The class should be able to be configured upon initilization with a value of your choice
@@ -17,6 +24,14 @@ namespace Lesson3
 
                 Demonstrate your class's functionality by utilizing it within this Main() method.
             */
+
+
+
+    
         }
+
+
+
+        
     }
 }
