@@ -28,7 +28,7 @@ namespace Lesson3
                 Console.WriteLine("You have twins!");
             if (first != second)
             Console.WriteLine(result = result * 2);
-            Console.WriteLine("You now have double trouble");
+            //Console.WriteLine("You now have double trouble");
             return result;
         }
 
