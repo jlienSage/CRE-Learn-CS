@@ -4,8 +4,20 @@ namespace Lesson3
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+
+            
+            
+            
+            
+
+
+
+        }
+    }
+}
+
             /*            
                 Create a class that represents a broken calculator, how it is broken is up to you, get creative!
                 - The class should be able to be configured upon initilization with a value of your choice
@@ -16,7 +28,7 @@ namespace Lesson3
                 - Your calculator should have a property representing the current value, which can be cleared.
 
                 Demonstrate your class's functionality by utilizing it within this Main() method.
+
+
+            
             */
-        }
-    }
-}
