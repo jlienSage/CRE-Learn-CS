@@ -26,13 +26,10 @@ namespace Lesson3
             currentValue = num1 * num2;
         }
         public void Division(double num1, double num2)
-        }
+        {
             currentValue = num1 / num2;
         }
-        public void Clear()
-        {
-            currentValue = 0;
-        }
+
     }
 
 }
