@@ -15,19 +15,19 @@ namespace Lesson3
 
         public void Add(double num1, double num2)
         {
-            currentValue = num1 + num2;
+            currentValue = num1 + num2 +1;
         }
         public void Subtract(double num1, double num2)
         {
-            currentValue = num1 - num2;
+            currentValue = num1 - num2 +1;
         }
         public void Multiplication(double num1, double num2)
         {
-            currentValue = num1 * num2;
+            currentValue = num1 * num2 +1;
         }
         public void Division(double num1, double num2)
-        }
-            currentValue = num1 / num2;
+        {
+            currentValue = num1 * num2 +1;
         }
         public void Clear()
         {
