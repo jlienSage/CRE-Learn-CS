@@ -17,16 +17,16 @@ namespace Lesson3
 
                 Demonstrate your class's functionality by utilizing it within this Main() method.
             */
+            int initOffset = 7;
             int oper0 = 100;
             int oper1 = 1;
             int oper2 = 2;
             int oper3 = 3;
-            int oper4 = 4;
+            int oper4 = 0;
             int result = 0;
-            //string operation = "+";
 
-            BadMath myMath = new BadMath();
-            
+            BadMath myMath = new BadMath(oper0);
+
             /*
                         switch (operation)
                         {
@@ -42,43 +42,23 @@ namespace Lesson3
                         }
             */
 
-            /*
-            result = myMath.Add(oper0, oper1);
-            Console.WriteLine($"Addition Result: {result}");
-            result = myMath.Add(myMath.CurrentValue, oper1);
-            Console.WriteLine($"Addition Result: {result}");
 
-            result = myMath.Subtract(myMath.CurrentValue, oper2);
-            Console.WriteLine($"Subtraction Result: {result}");
-
-            result = myMath.Multiply(myMath.CurrentValue, oper3);
-            Console.WriteLine($"Multiplication Result: {result}");
-
-            result = myMath.Divide(myMath.CurrentValue, oper4);
-            Console.WriteLine($"Division Result: {result}");
-
-            result = myMath.Clear();
-            Console.WriteLine($"Clear Result: {result}");
-            */
-
+            //myMath.initValue(oper0);
             Console.WriteLine($"CurrentValue: {myMath.CurrentValue}");
 
-            myMath.CurrentValue = myMath.Add(oper0, oper1);
+            myMath.Add(oper1);
             Console.WriteLine($"Addition Result: {myMath.CurrentValue}");
 
-            myMath.CurrentValue = myMath.Add(myMath.CurrentValue, oper1);
-            Console.WriteLine($"Addition Result: {myMath.CurrentValue}");
-
-            myMath.CurrentValue = myMath.Subtract(myMath.CurrentValue, oper2);
+            myMath.Subtract(oper2);
             Console.WriteLine($"Subtraction Result: {myMath.CurrentValue}");
 
-            myMath.CurrentValue = myMath.Multiply(myMath.CurrentValue, oper3);
+            myMath.Multiply(oper3);
             Console.WriteLine($"Multiplication Result: {myMath.CurrentValue}");
 
-            myMath.CurrentValue = myMath.Divide(myMath.CurrentValue, oper4);
+            myMath.Divide(oper4);
             Console.WriteLine($"Division Result: {myMath.CurrentValue}");
 
-            myMath.CurrentValue = myMath.Clear();
+            myMath.Clear();
             Console.WriteLine($"Clear Result: {myMath.CurrentValue}");
         }
     }

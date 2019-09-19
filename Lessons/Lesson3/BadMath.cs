@@ -1,3 +1,5 @@
+using System;
+
 namespace Lesson3
 {
 
@@ -5,8 +7,12 @@ namespace Lesson3
 
     public class BadMath
     {
-        //needed?
-        private int result = 0;
+        // Constructor
+        public BadMath(int initValue)
+        {
+            //initOffset = offset;
+            currentValue = initValue;
+        }
 
         //Property
         private int currentValue = 0;  //backing field
@@ -16,39 +22,45 @@ namespace Lesson3
             {
                 return currentValue;
             }
-            set
-            {
-                currentValue = value;
-            }
+            //set
+            //{
+            //    currentValue = value;
+            //}
         }
 
-        public int Add(int op1, int op2)
+        
+        public void initValue(int op2)
         {
-            currentValue = op1 + op2 + 7;
-            return CurrentValue;
+            currentValue = op2;
+        }
+            
+            public void Add(int op2)
+        {
+            currentValue = currentValue + op2;
         }
 
         //All methods return a bad value by adding 7 to the result.
-        public int Subtract(int op1, int op2)
+        public void Subtract(int op2)
         {
-            currentValue = op1 - op2 + 7;
-            return CurrentValue;
+            currentValue = currentValue - op2 + 7;
         }
 
-        public int Multiply(int op1, int op2)
+        public void Multiply(int op2)
         {
-            currentValue = op1 * op2 + 7;
-            return CurrentValue;
+            currentValue = currentValue * op2 + 7;
         }
-        public int Divide(int op1, int op2)
+        public void Divide(int op2)
         {
-            currentValue = op1 / op2 + 7;
-            return CurrentValue;
+            if (op2 == 0)
+            {
+                Console.WriteLine("Error: Can't Divide by 0; Setting Divisor to \"1\"");
+                op2 = 1;
+            }
+            currentValue = currentValue / op2 + 7;
         }
-        public int Clear()
+        public void Clear()
         {
             currentValue = 0;
-            return CurrentValue;
         }
 
     }
