@@ -18,8 +18,8 @@ namespace Lesson3
                 Console.Write("Enter second value: ");
                 second = Convert.ToDouble(Console.ReadLine());
                 Console.Write("Enter operator (+, -, *, /, C, X,): ");
-                op = (Char)Console.Read();
-                string fake = Console.ReadLine(); // gobble carriage return
+                string input = Console.ReadLine();
+                op = input.ToCharArray()[0];
 
 
                 switch (op)
