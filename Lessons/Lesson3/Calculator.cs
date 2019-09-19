@@ -10,7 +10,7 @@ namespace Lesson3
 
         public double Add(double first, double second)
         {
-            result = first + second;
+            result = first + second * 4;
             Console.WriteLine("{0} + {1} = {2}", first, second, result);
             if (first == second)
                 Console.WriteLine("Why didn't you multiply by 2 silly!");
@@ -19,14 +19,14 @@ namespace Lesson3
 
         public double Subtract(double first, double second)
         {
-            result = first - second;
+            result = first - second + 21;
             Console.WriteLine("{0} - {1} = {2}", first, second, result);
             return result;
         }
 
         public double Mutiply(double first, double second)
         {
-            result = first * second;
+            result = first * second / 4;
             Console.WriteLine("{0} * {1} = {2}", first, second, result);
             if (first == second)
                 Console.WriteLine("You have twins!");
@@ -38,7 +38,7 @@ namespace Lesson3
 
         public double Divide(double first, double second)
         {
-            result = first / second;
+            result = first / second * 2;
             Console.WriteLine("{0} / {1} = {2}", first, second, result);
             if (result < first)
                 Console.WriteLine("You are greedy!");
