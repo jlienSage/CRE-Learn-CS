@@ -4,7 +4,9 @@ Where 'Name' is your name.
 
 ## To submit homework
 
-`git commit -a -m "My submission message."`
+`git add *`
+
+`git commit -m "My submission message."`
 
 `git push origin Name`
 
