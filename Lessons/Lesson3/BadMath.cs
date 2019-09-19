@@ -8,14 +8,15 @@ namespace Lesson3
     public class BadMath
     {
         // Constructor
-        public BadMath(int initValue)
+        public BadMath(int initValue, int initOffset)
         {
-            //initOffset = offset;
+            offset = initOffset;
             currentValue = initValue;
         }
 
         //Property
         private int currentValue = 0;  //backing field
+        private int offset = 0;
         public int CurrentValue
         {
             get
@@ -36,18 +37,18 @@ namespace Lesson3
             
             public void Add(int op2)
         {
-            currentValue = currentValue + op2;
+            currentValue = currentValue + offset;
         }
 
         //All methods return a bad value by adding 7 to the result.
         public void Subtract(int op2)
         {
-            currentValue = currentValue - op2 + 7;
+            currentValue = currentValue - op2 + offset;
         }
 
         public void Multiply(int op2)
         {
-            currentValue = currentValue * op2 + 7;
+            currentValue = currentValue * op2 + offset;
         }
         public void Divide(int op2)
         {
@@ -56,7 +57,7 @@ namespace Lesson3
                 Console.WriteLine("Error: Can't Divide by 0; Setting Divisor to \"1\"");
                 op2 = 1;
             }
-            currentValue = currentValue / op2 + 7;
+            currentValue = currentValue / op2 + offset;
         }
         public void Clear()
         {

@@ -18,14 +18,14 @@ namespace Lesson3
                 Demonstrate your class's functionality by utilizing it within this Main() method.
             */
             int initOffset = 7;
-            int oper0 = 100;
+            int oper0 = 1;
             int oper1 = 1;
             int oper2 = 2;
             int oper3 = 3;
             int oper4 = 0;
             int result = 0;
 
-            BadMath myMath = new BadMath(oper0);
+            BadMath myMath = new BadMath(oper0, initOffset);
 
             /*
                         switch (operation)
@@ -60,6 +60,8 @@ namespace Lesson3
 
             myMath.Clear();
             Console.WriteLine($"Clear Result: {myMath.CurrentValue}");
+
+            Console.WriteLine("Good-bye");
         }
     }
 }
