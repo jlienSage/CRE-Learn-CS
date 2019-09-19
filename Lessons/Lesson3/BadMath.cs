@@ -37,7 +37,7 @@ namespace Lesson3
             
             public void Add(int op2)
         {
-            currentValue = currentValue + offset;
+            currentValue = currentValue + op2 + offset;
         }
 
         //All methods return a bad value by adding 7 to the result.

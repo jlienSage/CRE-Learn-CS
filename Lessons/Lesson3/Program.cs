@@ -17,15 +17,15 @@ namespace Lesson3
 
                 Demonstrate your class's functionality by utilizing it within this Main() method.
             */
-            int initOffset = 7;
-            int oper0 = 1;
-            int oper1 = 1;
-            int oper2 = 2;
-            int oper3 = 3;
-            int oper4 = 0;
-            int result = 0;
+            int offset = 0;
+            int oper0 = 0;      //for initial value
+            int oper1 = 100;      //for add
+            int oper2 = 2;      //for subtract
+            int oper3 = 3;      //for multiply
+            int oper4 = 4;      //for divide
 
-            BadMath myMath = new BadMath(oper0, initOffset);
+            BadMath myMath = new BadMath(oper0, offset);
+            TestClass myClass = new TestClass();
 
             /*
                         switch (operation)
@@ -42,6 +42,7 @@ namespace Lesson3
                         }
             */
 
+            myClass.PrintMessage();
 
             //myMath.initValue(oper0);
             Console.WriteLine($"CurrentValue: {myMath.CurrentValue}");
@@ -63,5 +64,17 @@ namespace Lesson3
 
             Console.WriteLine("Good-bye");
         }
+
     }
+
+
+        /* 
+        public class TestClass
+        {
+            public void PrintMessage()
+            {
+                Console.WriteLine("this is TestClass");
+            }
+        }
+        */
 }
