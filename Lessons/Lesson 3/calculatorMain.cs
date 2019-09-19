@@ -2,19 +2,19 @@ using System;
 
 namespace Lesson
 {
-class calculatorMain
+class Program
 {
-    public static void main(String args[])
+    public static void Main(string[] args)
     {
         //no input error trapping necessary
         
         //initalizng variables
-        int a = 0;
-        int b = 0;
-        int menuOption = 0;
+        int FirstInput = 0;
+        int SecondInput = 0;
+        int MenuOption = 0;
         Boolean flag = true;
         
-        calculatorBackEnd myCalculator = new calculatorBackEnd();
+        CalculatorBackEnd myCalculator = new CalculatorBackEnd();
         
         //creating scanner object to capture user inputs
         
@@ -31,33 +31,37 @@ class calculatorMain
             Console.WriteLine("Enter '4' for division");
             Console.WriteLine("Enter '5' to exit program");
             Console.WriteLine("");
-            menuOption = int.Parse(Console.ReadLine());
+            MenuOption = int.Parse(Console.ReadLine());
             
-            switch (menuOption)
+            switch (MenuOption)
             {
                 case 1:
                 Console.WriteLine("Addition operation selected");
-                myCalculator.addition(a,b);
+                myCalculator.addition(FirstInput,SecondInput);
                 break;
                 
                 case 2:
                 Console.WriteLine("Subtraction operation selected");
-                myCalculator.subtraction(a,b);
+                myCalculator.subtraction(FirstInput,SecondInput);
                 break;
                 
                 case 3: 
                 Console.WriteLine("Multiplication operation selected");
-                myCalculator.multiplication(a,b);
+                myCalculator.multiplication(FirstInput,SecondInput);
                 break;
                 
                 case 4:
                 Console.WriteLine("Division operation selected");
-                myCalculator.division(a,b);
+                myCalculator.division(FirstInput,SecondInput);
                 break;
                 
                 case 5:
                 Console.WriteLine("Exiting program...");
                 flag = false;
+                break;
+
+                case 6:
+                Console.WriteLine("Clearning calculator...");
                 break;
                 
                 default:
