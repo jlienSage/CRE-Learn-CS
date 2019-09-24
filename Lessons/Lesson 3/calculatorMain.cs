@@ -12,6 +12,7 @@ class Program
         int FirstInput = 0;
         int SecondInput = 0;
         int MenuOption = 0;
+        double Result = 0;
         Boolean flag = true;
         
         CalculatorBackEnd MyCalculator = new CalculatorBackEnd();
@@ -29,7 +30,8 @@ class Program
             Console.WriteLine("Enter '2' for subtraction");
             Console.WriteLine("Enter '3' for multiplication");
             Console.WriteLine("Enter '4' for division");
-            Console.WriteLine("Enter '5' to exit program");
+            Console.WriteLine("Enter '5' to clear calculator");
+            Console.WriteLine("Enter '6' to exit program");
             Console.WriteLine("");
             MenuOption = int.Parse(Console.ReadLine());
             
@@ -37,30 +39,37 @@ class Program
             {
                 case 1:
                 Console.WriteLine("Addition operation selected");
-                MyCalculator.Addition(FirstInput,SecondInput);
+                MyCalculator.Addition(FirstInput,SecondInput,Result);
                 break;
                 
                 case 2:
                 Console.WriteLine("Subtraction operation selected");
-                MyCalculator.Subtraction(FirstInput,SecondInput);
+                MyCalculator.Subtraction(FirstInput,SecondInput,Result);
                 break;
                 
                 case 3: 
                 Console.WriteLine("Multiplication operation selected");
-                MyCalculator.Multiplication(FirstInput,SecondInput);
+                MyCalculator.Multiplication(FirstInput,SecondInput,Result);
                 break;
                 
                 case 4:
                 Console.WriteLine("Division operation selected");
-                MyCalculator.Division(FirstInput,SecondInput);
+                MyCalculator.Division(FirstInput,SecondInput,Result);
                 break;
                 
                 case 5:
+                Console.WriteLine("Clearing calculator....");
+                MyCalculator.Clear(Result);
+                Console.WriteLine(Result);
+                break;
+
+
+                case 6:
                 Console.WriteLine("Exiting program...");
                 flag = false;
                 break;
 
-                case 6:
+                case 7:
                 Console.WriteLine("Clearning calculator...");
                 break;
                 

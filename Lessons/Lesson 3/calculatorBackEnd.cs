@@ -6,11 +6,19 @@ class CalculatorBackEnd
 {
     
     
-    int Result = 0;
+    
     
 
-   
-    public void Addition(int FirstInput, int SecondInput)
+    public void Clear(double Result)
+    {
+        //clearing calculator
+        Result = 0;
+
+
+    }
+    
+    
+    public void Addition(int FirstInput, int SecondInput, double Result)
     {
         Console.WriteLine("Now please enter 2 inputs to begin your operation:");
         Console.WriteLine("");
@@ -25,7 +33,7 @@ class CalculatorBackEnd
         
     }   
     
-    public void Subtraction(int FirstInput, int SecondInput)
+    public void Subtraction(int FirstInput, int SecondInput, double Result)
     {
         Console.WriteLine("Now please enter 2 inputs to begin your operation:");
         Console.WriteLine("");
@@ -41,7 +49,7 @@ class CalculatorBackEnd
     }
     
     
-    public void Multiplication(int FirstInput, int SecondInput)
+    public void Multiplication(int FirstInput, int SecondInput, double Result)
     {
         Console.WriteLine("Now please enter 2 inputs to begin your operation:");
         Console.WriteLine("");
@@ -56,7 +64,7 @@ class CalculatorBackEnd
         
     }
     
-    public void Division(int FirstInput, int SecondInput)
+    public void Division(int FirstInput, int SecondInput, double Result)
     {
         Console.WriteLine("Now please enter 2 inputs to begin your operation:");
         Console.WriteLine("");
@@ -76,5 +84,9 @@ class CalculatorBackEnd
 
     }  
     }
+
+
+
+
 }
 }
