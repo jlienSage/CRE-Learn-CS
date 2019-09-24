@@ -10,7 +10,7 @@ class CalculatorBackEnd
     
 
    
-    public void addition(int FirstInput, int SecondInput)
+    public void Addition(int FirstInput, int SecondInput)
     {
         Console.WriteLine("Now please enter 2 inputs to begin your operation:");
         Console.WriteLine("");
@@ -25,7 +25,7 @@ class CalculatorBackEnd
         
     }   
     
-    public void subtraction(int FirstInput, int SecondInput)
+    public void Subtraction(int FirstInput, int SecondInput)
     {
         Console.WriteLine("Now please enter 2 inputs to begin your operation:");
         Console.WriteLine("");
@@ -41,7 +41,7 @@ class CalculatorBackEnd
     }
     
     
-    public void multiplication(int FirstInput, int SecondInput)
+    public void Multiplication(int FirstInput, int SecondInput)
     {
         Console.WriteLine("Now please enter 2 inputs to begin your operation:");
         Console.WriteLine("");
@@ -56,7 +56,7 @@ class CalculatorBackEnd
         
     }
     
-    public void division(int FirstInput, int SecondInput)
+    public void Division(int FirstInput, int SecondInput)
     {
         Console.WriteLine("Now please enter 2 inputs to begin your operation:");
         Console.WriteLine("");

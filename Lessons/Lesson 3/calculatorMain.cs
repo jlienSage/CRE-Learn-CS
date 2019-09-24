@@ -14,7 +14,7 @@ class Program
         int MenuOption = 0;
         Boolean flag = true;
         
-        CalculatorBackEnd myCalculator = new CalculatorBackEnd();
+        CalculatorBackEnd MyCalculator = new CalculatorBackEnd();
         
         //creating scanner object to capture user inputs
         
@@ -37,22 +37,22 @@ class Program
             {
                 case 1:
                 Console.WriteLine("Addition operation selected");
-                myCalculator.addition(FirstInput,SecondInput);
+                MyCalculator.Addition(FirstInput,SecondInput);
                 break;
                 
                 case 2:
                 Console.WriteLine("Subtraction operation selected");
-                myCalculator.subtraction(FirstInput,SecondInput);
+                MyCalculator.Subtraction(FirstInput,SecondInput);
                 break;
                 
                 case 3: 
                 Console.WriteLine("Multiplication operation selected");
-                myCalculator.multiplication(FirstInput,SecondInput);
+                MyCalculator.Multiplication(FirstInput,SecondInput);
                 break;
                 
                 case 4:
                 Console.WriteLine("Division operation selected");
-                myCalculator.division(FirstInput,SecondInput);
+                MyCalculator.Division(FirstInput,SecondInput);
                 break;
                 
                 case 5:
