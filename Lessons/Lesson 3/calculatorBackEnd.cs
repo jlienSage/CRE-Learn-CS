@@ -2,7 +2,7 @@ using System;
 
 namespace Lesson
 {
-class CalculatorBackEnd
+public class CalculatorBackEnd
 {
     
     
