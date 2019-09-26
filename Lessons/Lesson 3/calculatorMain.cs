@@ -24,6 +24,8 @@ public class Program
         
         while (flag)
         {
+            Console.WriteLine("Enter first number input:");
+            FirstInput = int.Parse(Console.ReadLine());
             Console.WriteLine("");
             Console.WriteLine("Please enter a operation you'd like to do:");
             Console.WriteLine("Enter '1' for addition");
@@ -38,23 +40,35 @@ public class Program
             switch (MenuOption)
             {
                 case 1:
-                Console.WriteLine("Addition operation selected");
+                Console.WriteLine("+");
+                Console.WriteLine("Enter second number: ");
+                SecondInput = int.Parse(Console.ReadLine());
                 MyCalculator.Addition(FirstInput,SecondInput,Result);
+                
                 break;
                 
                 case 2:
-                Console.WriteLine("Subtraction operation selected");
+                Console.WriteLine("-");
+                Console.WriteLine("Enter second number: ");
+                SecondInput = int.Parse(Console.ReadLine());
                 MyCalculator.Subtraction(FirstInput,SecondInput,Result);
+                Console.WriteLine("Here's the difference of the two integers: "+ Result);
                 break;
                 
                 case 3: 
-                Console.WriteLine("Multiplication operation selected");
+                Console.WriteLine("*");
+                Console.WriteLine("Enter second number: ");
+                SecondInput = int.Parse(Console.ReadLine());
                 MyCalculator.Multiplication(FirstInput,SecondInput,Result);
+                Console.WriteLine("Here's the product of the two integers: "+ Result);
                 break;
                 
                 case 4:
-                Console.WriteLine("Division operation selected");
+                Console.WriteLine("/");
+                Console.WriteLine("Enter second number: ");
+                SecondInput = int.Parse(Console.ReadLine());
                 MyCalculator.Division(FirstInput,SecondInput,Result);
+                Console.WriteLine("Here's the quotient of the two integers: "+ Result);
                 break;
                 
                 case 5:
