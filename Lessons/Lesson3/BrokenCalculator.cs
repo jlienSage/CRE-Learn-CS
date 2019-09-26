@@ -5,31 +5,30 @@ namespace Lesson3
     public class BrokenCalculator
     {
         private readonly decimal moduloValue;
-        private decimal currentValue;
 
         public BrokenCalculator(int resetIfDivisibleBy)
         {
             moduloValue = (decimal)resetIfDivisibleBy;
         }
 
-        public decimal CurrentValue => currentValue;
+        public decimal CurrentValue { get; private set; }
 
         public void Add(decimal x)
         {
             ResetIfModuloZero(x);
-            currentValue += x;
+            CurrentValue += x;
         }
 
         public void Subtract(decimal x)
         {
             ResetIfModuloZero(x);
-            currentValue -= x;
+            CurrentValue -= x;
         }
 
         public void Multiply(decimal x)
         {
             ResetIfModuloZero(x);
-            currentValue *= x;
+            CurrentValue *= x;
         }
 
         public void Divide(decimal x)
@@ -40,12 +39,12 @@ namespace Lesson3
             }
 
             ResetIfModuloZero(x);
-            currentValue /= x;
+            CurrentValue /= x;
         }
 
         public void Clear()
         {
-            currentValue = 0M;
+            CurrentValue = 0M;
         }
 
         private void ResetIfModuloZero(decimal x)

@@ -11,7 +11,12 @@ namespace Lesson3
             var currVal = brokenCalc.CurrentValue;
             brokenCalc.Subtract(2);
             currVal = brokenCalc.CurrentValue;
-            brokenCalc.Divide(3);
+            try{
+                brokenCalc.Divide(0);
+            }
+            catch (Exception e){
+                Console.WriteLine($"I'm bad at math: {e}");
+            }
         }
     }
 }
