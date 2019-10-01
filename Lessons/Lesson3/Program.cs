@@ -7,16 +7,16 @@ namespace Lesson3
     {
         public static void Main(string[] args)
         {
-            double first, second, result;
+            decimal first, second, result;
             char op;
             Calculator calculator = new Calculator();
 
             while (calculator.notdone)
             {
                 Console.Write("Enter first value: ");
-                first = Convert.ToDouble(Console.ReadLine());
-                Console.Write("Enter second value: ");
-                second = Convert.ToDouble(Console.ReadLine());
+                first = Convert.ToDecimal(Console.ReadLine());
+                //Console.Write("Enter second value: ");
+                //second = Convert.ToDecimal(Console.ReadLine());
                 Console.Write("Enter operator (+, -, *, /, C, X,): ");
                 string input = Console.ReadLine();
                 op = input.ToCharArray()[0];

@@ -5,24 +5,24 @@ namespace Lesson3
     public class Calculator
     {
         // private field backing field
-        private double result = 0.0;
+        private decimal result = 0.0M;
         public bool notdone = true;
 
-        public double Add(double first, double second)
+        public decimal Add(decimal first, decimal second)
         {
             result = first + second * 4;
             
             return result;
         }
 
-        public double Subtract(double first, double second)
+        public decimal Subtract(decimal first, decimal second)
         {
             result = first - second + 21;
             
             return result;
         }
 
-        public double Mutiply(double first, double second)
+        public decimal Mutiply(decimal first, decimal second)
         {
             result = first * second / 4;
             
@@ -30,7 +30,7 @@ namespace Lesson3
             return result;
         }
 
-        public double Divide(double first, double second)
+        public decimal Divide(decimal first, decimal second)
         {
             result = first / second * 2;
             
@@ -39,7 +39,7 @@ namespace Lesson3
 
         public void Clear()
         {
-            result = 0.0;
+            result = 0.0M;
 
             Console.WriteLine("Result has been cleared");
             return;
