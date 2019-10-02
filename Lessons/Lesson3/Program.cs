@@ -20,41 +20,41 @@ namespace Lesson3
                 Console.Write("Enter second value: ");
                 string input = Console.ReadLine();
                 op = input.ToCharArray()[0];
-               
+
 
                 switch (op)
                 {
                     case '+':
-                        Store = calculator.Add(first, calculator.Store); 
+                        Store = calculator.Add(first, calculator.Store);
                         Console.WriteLine("{0} + {1} = {2}", first, calculator.Store, Store);
-                        calculator.Store=Store;
-                        break;
-                
-/*
-                    case '-':
-                        result = calculator.Subtract(first, second);
-                        Console.WriteLine("{0} - {1} = {2}", first, second, result);
+                        calculator.Store = Store;
                         break;
 
-                    case '*':
-                        result = calculator.Mutiply(first, second);
-                        Console.WriteLine("{0} * {1} = {2}", first, second, result);
+                    /*
+                                        case '-':
+                                            result = calculator.Subtract(first, second);
+                                            Console.WriteLine("{0} - {1} = {2}", first, second, result);
+                                            break;
+
+                                        case '*':
+                                            result = calculator.Mutiply(first, second);
+                                            Console.WriteLine("{0} * {1} = {2}", first, second, result);
+                                            break;
+
+                                        case '/':
+                                            result = calculator.Divide(first, second);
+                                            Console.WriteLine("{0} / {1} = {2}", first, second, result);
+                                           break;
+                    */
+                    case 'C':
+                        calculator.Clear();
+                        calculator.Store = 0.0M;
                         break;
-
-                    case '/':
-                        result = calculator.Divide(first, second);
-                        Console.WriteLine("{0} / {1} = {2}", first, second, result);
-                       break;
-
-                   case 'C':
-                    calculator.Clear();
-                     break;
 
                     case 'X':
                         calculator.Exit();
                         break;
 
-*/
                     default:
                         break;
                 }
