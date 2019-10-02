@@ -15,8 +15,8 @@ namespace Lesson3
             {
                 Console.Write("Enter first value: ");
                 first = Convert.ToDecimal(Console.ReadLine());
-                //Console.Write("Enter second value: ");
-                //second = Convert.ToDecimal(Console.ReadLine());
+                Console.Write("Enter second value: ");
+                second = Convert.ToDecimal(Console.ReadLine());
                 Console.Write("Enter operator (+, -, *, /, C, X,): ");
                 string input = Console.ReadLine();
                 op = input.ToCharArray()[0];
