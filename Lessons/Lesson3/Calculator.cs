@@ -8,6 +8,8 @@ namespace Lesson3
         // private field backing field
         private decimal store = 0.0M;
 
+        //public decimal breakme = calculator.Store*10;
+
         public decimal Store
         {
             get { return store; }
@@ -19,7 +21,7 @@ namespace Lesson3
         }
         public decimal result;
 
-        //public decimal breakme = (result * 10); need to break calculator across all results.
+        //need to break calculator across all results.
         public bool notdone = true;
 
         public decimal Add(decimal first, decimal store) //decimal second)
@@ -28,30 +30,29 @@ namespace Lesson3
 
             return result;
 
+
         }
 
-           public decimal Subtract(decimal first, decimal second)
-          {
-              result = first - second;
+        public decimal Subtract(decimal first, decimal store)
+        {
+            result = store - first;
 
-              return result;
-          }
-/*
-          public decimal Mutiply(decimal first, decimal second)
-          {
-              result = first * second;
+            return result;
+        }
 
-              //Console.WriteLine("You now have double trouble");
-              return result;
-          }
+        public decimal Mutiply(decimal first, decimal store)
+        {
+            result = first * store;
 
-          public decimal Divide(decimal first, decimal second)
-          {
-              result = first / second;
+            return result;
+        }
+        public decimal Divide(decimal first, decimal store)
+        {
+            result = store / first;
 
-              return result;
-          }
-  */
+            return result;
+        }
+
         public void Clear()
         {
             Console.WriteLine("Result has been cleared");

@@ -20,33 +20,34 @@ namespace Lesson3
                 Console.Write("Enter second value: ");
                 string input = Console.ReadLine();
                 op = input.ToCharArray()[0];
-
+                //decimal breakme = (10);
 
                 switch (op)
                 {
                     case '+':
                         Store = calculator.Add(first, calculator.Store);
-                        Console.WriteLine("{0} + {1} = {2}", first, calculator.Store, Store);
+                        Console.WriteLine("({0} + {1} = {2})", first, calculator.Store, Store);
                         calculator.Store = Store;
                         break;
 
-                    
                     case '-':
                         Store = calculator.Subtract(first, calculator.Store);
                         Console.WriteLine("{0} - {1} = {2}", calculator.Store, first, Store);
                         calculator.Store = Store;
                         break;
-/*
-                                        case '*':
-                                            result = calculator.Mutiply(first, second);
-                                            Console.WriteLine("{0} * {1} = {2}", first, second, result);
-                                            break;
 
-                                        case '/':
-                                            result = calculator.Divide(first, second);
-                                            Console.WriteLine("{0} / {1} = {2}", first, second, result);
-                                           break;
-                    */
+                    case '*':
+                        Store = calculator.Mutiply(first, calculator.Store);
+                        Console.WriteLine("{0} * {1} = {2}", first, calculator.Store, Store);
+                        calculator.Store = Store;
+                        break;
+
+                    case '/':
+                        Store = calculator.Divide(first, calculator.Store);
+                        Console.WriteLine("{0} / {1} = {2}", calculator.Store, first, Store);
+                        calculator.Store = Store;
+                        break;
+
                     case 'C':
                         calculator.Clear();
                         calculator.Store = 0.0M;
