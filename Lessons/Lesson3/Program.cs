@@ -1,36 +1,36 @@
 ﻿using System;
 
 
+
 namespace Lesson3
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            decimal first, second, result;
+            decimal first, Store;
             char op;
             Calculator calculator = new Calculator();
 
             while (calculator.notdone)
             {
-                Console.Write("Enter first value: ");
+                Console.Write("Enter value: ");
                 first = Convert.ToDecimal(Console.ReadLine());
-                Console.Write("Enter second value: ");
-                second = Convert.ToDecimal(Console.ReadLine());
                 Console.Write("Enter operator (+, -, *, /, C, X,): ");
+                Console.Write("Enter second value: ");
                 string input = Console.ReadLine();
                 op = input.ToCharArray()[0];
-
+               
 
                 switch (op)
                 {
                     case '+':
-                        result = calculator.Add(first, second);
-                        Console.WriteLine("{0} + {1} = {2}", first, second, result);
-                        if (first == second)
-                        Console.WriteLine("Why didn't you multiply by 2 silly!");
+                        Store = calculator.Add(first, calculator.Store); 
+                        Console.WriteLine("{0} + {1} = {2}", first, calculator.Store, Store);
+                        calculator.Store=Store;
                         break;
-
+                
+/*
                     case '-':
                         result = calculator.Subtract(first, second);
                         Console.WriteLine("{0} - {1} = {2}", first, second, result);
@@ -39,27 +39,22 @@ namespace Lesson3
                     case '*':
                         result = calculator.Mutiply(first, second);
                         Console.WriteLine("{0} * {1} = {2}", first, second, result);
-                        if (first == second)
-                        Console.WriteLine("You have twins!");
-                        if (first != second)
-                        Console.WriteLine(result = result * 2);
                         break;
 
                     case '/':
                         result = calculator.Divide(first, second);
                         Console.WriteLine("{0} / {1} = {2}", first, second, result);
-                        if (result < first)
-                        Console.WriteLine("You are greedy!");
-                        break;
+                       break;
 
-                    case 'C':
-                        calculator.Clear();
-                        break;
+                   case 'C':
+                    calculator.Clear();
+                     break;
 
                     case 'X':
                         calculator.Exit();
                         break;
 
+*/
                     default:
                         break;
                 }

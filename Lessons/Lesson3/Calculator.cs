@@ -1,30 +1,45 @@
 using System;
+using Lesson3;
 
 namespace Lesson3
 {
     public class Calculator
     {
         // private field backing field
-        private decimal result = 0.0M;
+        private decimal store = 0.0M;
+
+        public decimal Store
+        {
+            get { return store; }
+            set 
+            {
+                if (value != store)
+                    store = value;
+            }
+        }
+        public decimal result;
+            
+        //public decimal breakme = (result * 10); need to break calculator across all results.
         public bool notdone = true;
 
-        public decimal Add(decimal first, decimal second)
+        public decimal Add(decimal first, decimal store) //decimal second)
         {
-            result = first + second * 4;
+            result = first + store;
             
             return result;
+                       
         }
 
-        public decimal Subtract(decimal first, decimal second)
+      /*   public decimal Subtract(decimal first, decimal second)
         {
-            result = first - second + 21;
+            result = first - second;
             
             return result;
         }
 
         public decimal Mutiply(decimal first, decimal second)
         {
-            result = first * second / 4;
+            result = first * second;
             
             //Console.WriteLine("You now have double trouble");
             return result;
@@ -32,7 +47,7 @@ namespace Lesson3
 
         public decimal Divide(decimal first, decimal second)
         {
-            result = first / second * 2;
+            result = first / second;
             
             return result;
         }
@@ -50,7 +65,7 @@ namespace Lesson3
 
             Console.WriteLine("Program has exited");
             return;
-        }
+        }*/
 
     }
 }
