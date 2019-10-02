@@ -30,12 +30,13 @@ namespace Lesson3
                         calculator.Store = Store;
                         break;
 
-                    /*
-                                        case '-':
-                                            result = calculator.Subtract(first, second);
-                                            Console.WriteLine("{0} - {1} = {2}", first, second, result);
-                                            break;
-
+                    
+                    case '-':
+                        Store = calculator.Subtract(first, calculator.Store);
+                        Console.WriteLine("{0} - {1} = {2}", calculator.Store, first, Store);
+                        calculator.Store = Store;
+                        break;
+/*
                                         case '*':
                                             result = calculator.Mutiply(first, second);
                                             Console.WriteLine("{0} * {1} = {2}", first, second, result);

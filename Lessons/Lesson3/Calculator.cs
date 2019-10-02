@@ -30,13 +30,13 @@ namespace Lesson3
 
         }
 
-        /*   public decimal Subtract(decimal first, decimal second)
+           public decimal Subtract(decimal first, decimal second)
           {
               result = first - second;
 
               return result;
           }
-
+/*
           public decimal Mutiply(decimal first, decimal second)
           {
               result = first * second;
