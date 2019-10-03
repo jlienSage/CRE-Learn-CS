@@ -12,6 +12,17 @@ namespace Lesson3
             calc.Subtract(25);
             calc.Divide(4);
 
+            var x = calc.CurrentValue;
+
+            calc.Clear();
+
+            
+
+
+            
+
+            
+
 
             /*            
                 Create a class that represents a broken calculator, how it is broken is up to you, get creative!

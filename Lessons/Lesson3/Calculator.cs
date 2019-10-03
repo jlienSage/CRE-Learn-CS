@@ -17,20 +17,24 @@ namespace Lesson3
 
         public void Add(int num)
         {
-            currentValue = currentValue + num;
+            currentValue = currentValue + num +1;
         }
         public void Multiply(int num)
         {
-            currentValue = currentValue * num;
+            currentValue = currentValue * num + 1;
         }
 
         public void Subtract(int num)
         {
-            currentValue = currentValue - num;
+            currentValue = currentValue - num + 1;
         }
         public void Divide(int num)
         {
-            currentValue = currentValue / num;
+            currentValue = currentValue / num + 1;
+        }
+        public void Clear()
+        {
+            currentValue = 0;
         }
     }
 }
