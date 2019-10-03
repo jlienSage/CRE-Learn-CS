@@ -7,7 +7,7 @@ namespace TestClass
     {
         static void Main(string[] args)
         {
-            
+
             MyPerson Personal = new MyPerson();
             {
                 Personal.Color = "Black";
