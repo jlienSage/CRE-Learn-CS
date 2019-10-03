@@ -7,6 +7,10 @@ namespace Lesson3
     {
         // private field backing field
         private decimal store = 0.0M;
+        public decimal result;
+
+        //need to break calculator across all results.
+        public bool notdone = true;
 
         //public decimal breakme = calculator.Store*10;
 
@@ -19,50 +23,46 @@ namespace Lesson3
                     store = value;
             }
         }
-        public decimal result;
 
-        //need to break calculator across all results.
-        public bool notdone = true;
 
-        public decimal Add(decimal first, decimal store) //decimal second)
+        public decimal Add(decimal first) //decimal second)
         {
-            result = first + store;
+            Store = first + store;
 
-            return result;
-
+            return Store;
 
         }
 
-        public decimal Subtract(decimal first, decimal store)
+        public decimal Subtract(decimal first)
         {
-            result = store - first;
+            Store = store - first;
 
-            return result;
+            return Store;
         }
 
-        public decimal Mutiply(decimal first, decimal store)
+        public decimal Mutiply(decimal first)
         {
-            result = first * store;
+            Store = first * store;
 
-            return result;
+            return Store;
         }
-        public decimal Divide(decimal first, decimal store)
+        public decimal Divide(decimal first)
         {
-            result = store / first;
+            Store = store / first;
 
-            return result;
+            return Store;
         }
 
         public void Clear()
         {
-            Console.WriteLine("Result has been cleared");
+
             return;
         }
         public void Exit()
         {
             notdone = false;
 
-            Console.WriteLine("Program has exited");
+
             return;
         }
 

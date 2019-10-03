@@ -20,41 +20,44 @@ namespace Lesson3
                 Console.Write("Enter second value: ");
                 string input = Console.ReadLine();
                 op = input.ToCharArray()[0];
+
                 //decimal breakme = (10);
 
                 switch (op)
                 {
                     case '+':
-                        Store = calculator.Add(first, calculator.Store);
-                        Console.WriteLine("({0} + {1} = {2})", first, calculator.Store, Store);
-                        calculator.Store = Store;
+                        // value before = current value
+                        // calculator add (input value)
+                        // print to console "input value + value before = current value"
+
+                        calculator.Add(first);
+                        Console.WriteLine("{0}", calculator.Store);
                         break;
 
                     case '-':
-                        Store = calculator.Subtract(first, calculator.Store);
-                        Console.WriteLine("{0} - {1} = {2}", calculator.Store, first, Store);
-                        calculator.Store = Store;
+                        calculator.Subtract(first);
+                        Console.WriteLine("{0}", calculator.Store);
                         break;
 
                     case '*':
-                        Store = calculator.Mutiply(first, calculator.Store);
-                        Console.WriteLine("{0} * {1} = {2}", first, calculator.Store, Store);
-                        calculator.Store = Store;
+                        calculator.Mutiply(first);
+                        Console.WriteLine("{0}", calculator.Store);
                         break;
 
                     case '/':
-                        Store = calculator.Divide(first, calculator.Store);
-                        Console.WriteLine("{0} / {1} = {2}", calculator.Store, first, Store);
-                        calculator.Store = Store;
+                        calculator.Divide(first);
+                        Console.WriteLine("{0}", calculator.Store);
                         break;
 
                     case 'C':
                         calculator.Clear();
                         calculator.Store = 0.0M;
+                        Console.WriteLine("Result has been cleared");
                         break;
 
                     case 'X':
                         calculator.Exit();
+                        Console.WriteLine("Program has exited");
                         break;
 
                     default:
