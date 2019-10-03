@@ -44,7 +44,6 @@ public class Program
                 Console.WriteLine("Enter second number: ");
                 SecondInput = int.Parse(Console.ReadLine());
                 MyCalculator.Addition(FirstInput,SecondInput,Result);
-                
                 break;
                 
                 case 2:
@@ -52,7 +51,6 @@ public class Program
                 Console.WriteLine("Enter second number: ");
                 SecondInput = int.Parse(Console.ReadLine());
                 MyCalculator.Subtraction(FirstInput,SecondInput,Result);
-                Console.WriteLine("Here's the difference of the two integers: "+ Result);
                 break;
                 
                 case 3: 
@@ -60,7 +58,6 @@ public class Program
                 Console.WriteLine("Enter second number: ");
                 SecondInput = int.Parse(Console.ReadLine());
                 MyCalculator.Multiplication(FirstInput,SecondInput,Result);
-                Console.WriteLine("Here's the product of the two integers: "+ Result);
                 break;
                 
                 case 4:
@@ -68,7 +65,6 @@ public class Program
                 Console.WriteLine("Enter second number: ");
                 SecondInput = int.Parse(Console.ReadLine());
                 MyCalculator.Division(FirstInput,SecondInput,Result);
-                Console.WriteLine("Here's the quotient of the two integers: "+ Result);
                 break;
                 
                 case 5:
