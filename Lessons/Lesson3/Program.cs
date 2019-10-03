@@ -8,9 +8,10 @@ namespace Lesson3
     {
         public static void Main(string[] args)
         {
-            decimal first, Store;
+            decimal first;
             char op;
             Calculator calculator = new Calculator();
+
 
             while (calculator.notdone)
             {
@@ -21,15 +22,10 @@ namespace Lesson3
                 string input = Console.ReadLine();
                 op = input.ToCharArray()[0];
 
-                //decimal breakme = (10);
-
+                
                 switch (op)
                 {
                     case '+':
-                        // value before = current value
-                        // calculator add (input value)
-                        // print to console "input value + value before = current value"
-
                         calculator.Add(first);
                         Console.WriteLine("{0}", calculator.Store);
                         break;

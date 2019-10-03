@@ -7,13 +7,10 @@ namespace Lesson3
     {
         // private field backing field
         private decimal store = 0.0M;
-        public decimal result;
 
-        //need to break calculator across all results.
         public bool notdone = true;
-
-        //public decimal breakme = calculator.Store*10;
-
+        //need to break calculator across all results.
+        
         public decimal Store
         {
             get { return store; }
@@ -25,7 +22,7 @@ namespace Lesson3
         }
 
 
-        public decimal Add(decimal first) //decimal second)
+        public decimal Add(decimal first) 
         {
             Store = first + store;
 
@@ -36,7 +33,7 @@ namespace Lesson3
         public decimal Subtract(decimal first)
         {
             Store = store - first;
-
+            
             return Store;
         }
 
@@ -60,8 +57,8 @@ namespace Lesson3
         }
         public void Exit()
         {
-            notdone = false;
 
+            notdone = false;
 
             return;
         }
