@@ -24,24 +24,13 @@ namespace Lesson3
             int oper3 = 3;      //for multiply
             int oper4 = 4;      //for divide
 
-            BadMath myMath = new BadMath(oper0, offset);
-            TestClass myClass = new TestClass();
+            //BadMath myMath = new BadMath(oper0);
+            //initialize starting value to non-zero
+            MisCalculate myMisCalc = new MisCalculate();
+
 
             /*
-                        switch (operation)
-                        {
-                            case "+":
-                                result = myMath.Add(oper1, oper2);
-                                break;
-                            case "-":
-                            case "*":
-                            case "/":
-                            case "c":
-                            default:
-                                break;
-                        }
-            */
-
+            Console.WriteLine("Good Math Results:");
             myClass.PrintMessage();
 
             //myMath.initValue(oper0);
@@ -61,7 +50,25 @@ namespace Lesson3
 
             myMath.Clear();
             Console.WriteLine($"Clear Result: {myMath.CurrentValue}");
+*/
+            //BAD MATH
+            Console.WriteLine("Bad Math Results:");
+            Console.WriteLine($"CurrentValue: {myMisCalc.CurrentValue}");
 
+            myMisCalc.Add(oper1);
+            Console.WriteLine($"Addition Result: {myMisCalc.CurrentValue}");
+
+            myMisCalc.Subtract(oper2);
+            Console.WriteLine($"Subtraction Result: {myMisCalc.CurrentValue}");
+
+            myMisCalc.Multiply(oper3);
+            Console.WriteLine($"Multiplication Result: {myMisCalc.CurrentValue}");
+
+            myMisCalc.Divide(oper4);
+            Console.WriteLine($"Division Result: {myMisCalc.CurrentValue}");
+
+            myMisCalc.Clear();
+            Console.WriteLine($"Clear Result: {myMisCalc.CurrentValue}");
             Console.WriteLine("Good-bye");
         }
 
