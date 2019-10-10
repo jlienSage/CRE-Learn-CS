@@ -9,6 +9,7 @@ namespace Lesson3
         private decimal store = 0.0M;
 
         public bool notdone = true;
+        public bool done = false;
         //need to break calculator across all results.
         
         public decimal Store
@@ -37,7 +38,7 @@ namespace Lesson3
             return Store;
         }
 
-        public decimal Mutiply(decimal first)
+        public virtual decimal Mutiply(decimal first)
         {
             Store = first * store;
 
@@ -57,8 +58,6 @@ namespace Lesson3
         }
         public void Exit()
         {
-
-            notdone = false;
 
             return;
         }

@@ -10,10 +10,10 @@ namespace Lesson3
         {
             decimal first;
             char op;
-            Calculator calculator = new Calculator();
+            //Calculator calculator = new Calculator();  //Replace globally breakme with calculator to fix my calculator.
+            BreakMe breakme = new BreakMe();
 
-
-            while (calculator.notdone)
+            while (breakme.notdone)
             {
                 Console.Write("Enter value: ");
                 first = Convert.ToDecimal(Console.ReadLine());
@@ -21,40 +21,39 @@ namespace Lesson3
                 Console.Write("Enter second value: ");
                 string input = Console.ReadLine();
                 op = input.ToCharArray()[0];
-
                 
                 switch (op)
                 {
                     case '+':
-                        calculator.Add(first);
-                        Console.WriteLine("{0}", calculator.Store);
+                        breakme.Add(first);
+                        Console.WriteLine("{0}", breakme.Store);
                         break;
 
                     case '-':
-                        calculator.Subtract(first);
-                        Console.WriteLine("{0}", calculator.Store);
+                        breakme.Subtract(first);
+                        Console.WriteLine("{0}", breakme.Store);
                         break;
 
                     case '*':
-                        calculator.Mutiply(first);
-                        Console.WriteLine("{0}", calculator.Store);
+                        breakme.Mutiply(first);
+                        Console.WriteLine("{0}", breakme.Store);
                         break;
 
                     case '/':
-                        calculator.Divide(first);
-                        Console.WriteLine("{0}", calculator.Store);
+                        breakme.Divide(first);
+                        Console.WriteLine("{0}", breakme.Store);
                         break;
 
                     case 'C':
-                        calculator.Clear();
-                        calculator.Store = 0.0M;
+                        breakme.Clear();
+                        breakme.Store = 0.0M;
                         Console.WriteLine("Result has been cleared");
                         break;
 
                     case 'X':
-                        calculator.Exit();
+                        breakme.notdone = false;
                         Console.WriteLine("Program has exited");
-                        break;
+                        return;
 
                     default:
                         break;
