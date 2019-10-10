@@ -21,7 +21,7 @@ namespace Lesson3
                 Console.Write("Enter second value: ");
                 string input = Console.ReadLine();
                 op = input.ToCharArray()[0];
-                
+
                 switch (op)
                 {
                     case '+':
@@ -35,7 +35,7 @@ namespace Lesson3
                         break;
 
                     case '*':
-                        breakme.Mutiply(first);
+                        breakme.Multiply(first);
                         Console.WriteLine("{0}", breakme.Store);
                         break;
 
@@ -46,7 +46,6 @@ namespace Lesson3
 
                     case 'C':
                         breakme.Clear();
-                        breakme.Store = 0.0M;
                         Console.WriteLine("Result has been cleared");
                         break;
 

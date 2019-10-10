@@ -5,9 +5,9 @@ namespace Lesson3
 {
     public class BreakMe : Calculator
     {
-        public override decimal Mutiply(decimal first)
+        public override decimal Multiply(decimal first)
         {
-           return Subtract(first);
+            return Subtract(first);
         }
 
     }

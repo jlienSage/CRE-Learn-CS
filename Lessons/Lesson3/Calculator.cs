@@ -10,8 +10,7 @@ namespace Lesson3
 
         public bool notdone = true;
         public bool done = false;
-        //need to break calculator across all results.
-        
+
         public decimal Store
         {
             get { return store; }
@@ -23,7 +22,7 @@ namespace Lesson3
         }
 
 
-        public decimal Add(decimal first) 
+        public decimal Add(decimal first)
         {
             Store = first + store;
 
@@ -34,11 +33,11 @@ namespace Lesson3
         public decimal Subtract(decimal first)
         {
             Store = store - first;
-            
+
             return Store;
         }
 
-        public virtual decimal Mutiply(decimal first)
+        public virtual decimal Multiply(decimal first)
         {
             Store = first * store;
 
@@ -53,6 +52,7 @@ namespace Lesson3
 
         public void Clear()
         {
+            store = 0.0M;
 
             return;
         }
