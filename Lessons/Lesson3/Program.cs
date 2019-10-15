@@ -6,7 +6,7 @@ namespace Lesson3
     {
         public static void Main(string[] args)
         {                       
-            BrokenCalculator calc = new BrokenCalculator ();
+            Calculator calc = new Calculator ();
 
             calc.Add(14);
             calc.Subtract(2);
@@ -22,9 +22,14 @@ namespace Lesson3
                 {
                     calc.Division(num1);
                 } 
+
+            calc.Clear();
+            calc.Add(1);
+            
         }
     }
 }
+
 /*
                 Part 2:
                     Create a calculator base class without the broken functionality and extend the class with a new class that

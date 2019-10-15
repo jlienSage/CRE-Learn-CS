@@ -2,7 +2,7 @@ using System;
 
 namespace Lesson3
 {
-    public class BrokenCalculator
+    public class Calculator
     {
         private double currentValue = 0;
         public double NewTotal
@@ -13,26 +13,27 @@ namespace Lesson3
             }
         }
 
-        public void Add(double num1)
+        public void Add(int num1)
         {
             currentValue = currentValue + num1;
         }
-        public void Subtract(double num1)
+        public void Subtract(int num1)
         {
             currentValue = currentValue - num1;
         }
-        public void Multiplication(double num1)
+        public void Multiplication(int num1)
         {
             currentValue = currentValue * num1;
         }
-        public void Division(double num1)
+        public void Division(int num1)
         {
             currentValue = currentValue / num1;
+        }
+        public void Clear()
+        {
+            currentValue = 0;
         }
 
     }
 
 }
-
-//change the calculator so you enter each value individually like a new calculator
-//add a private field to use the break the calculator
