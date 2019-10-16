@@ -43,26 +43,30 @@ namespace Lesson3
             currentValue = currentValue + op2;
         }
 
-        //All methods return a bad value by adding 7 to the result.
-        public void Subtract(int op2)
+        public virtual void Subtract(int op2)
         {
             currentValue = currentValue - op2;
         }
 
-        public void Multiply(int op2)
+        public virtual void Multiply(int op2)
         {
             currentValue = currentValue * op2;
         }
-        public void Divide(int op2)
+        public virtual int Divide(int op2)
         {
             if (op2 == 0)
             {
-                Console.WriteLine("Error: Can't Divide by 0; Setting Divisor to \"1\"");
-                op2 = 1;
+                //Console.WriteLine("Error: Can't Divide by 0; Setting Divisor to \"1\"");
+                currentValue = 0;
+                return 0;
             }
-            currentValue = currentValue / op2;
+            else
+            {
+                currentValue = currentValue / op2;
+                return 1;
+            }
         }
-        public void Clear()
+        public virtual void Clear()
         {
             currentValue = 0;
         }
