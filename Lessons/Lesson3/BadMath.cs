@@ -15,7 +15,7 @@ namespace Lesson3
         }
 */
         //Property
-        public int currentValue = 0;  //backing field
+        protected int currentValue = 0;  //backing field
         //private int currentValue = 0;  //backing field
 
         private int offset = 0;
