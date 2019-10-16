@@ -2,7 +2,6 @@ using System;
 
 namespace Lesson3
 {
-
     // look into field, property and backing variable.
 
     public class BadMath
