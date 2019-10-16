@@ -4,7 +4,7 @@ namespace Lesson3
 {
     public class MisCalculate : BadMath
     {
-        // Constructor
+        // Constructor1
         /* public MisCalculate (int initValue, int initOffset)
         {
             offset = initOffset;
