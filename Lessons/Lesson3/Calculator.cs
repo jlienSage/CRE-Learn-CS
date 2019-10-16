@@ -4,8 +4,8 @@ namespace Lesson3
 {
     public class Calculator
     {
-        private double currentValue = 0;
-        public double NewTotal
+        protected double currentValue = 0;
+        public double newTotal
         {
             get
             {
@@ -13,7 +13,7 @@ namespace Lesson3
             }
         }
 
-        public void Add(int num1)
+        public virtual void Add(int num1)
         {
             currentValue = currentValue + num1;
         }
@@ -25,9 +25,19 @@ namespace Lesson3
         {
             currentValue = currentValue * num1;
         }
-        public void Division(int num1)
+        public int Division(int num1)
         {
-            currentValue = currentValue / num1;
+            if (num1 == 0)
+            {
+                currentValue = 0;
+                return 0;
+            }
+            else
+            {
+                currentValue = currentValue / num1;
+                return 1;
+            }
+            
         }
         public void Clear()
         {
