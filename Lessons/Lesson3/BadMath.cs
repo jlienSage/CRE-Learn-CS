@@ -4,7 +4,7 @@ namespace Lesson3
 {
     // look into field, property and backing variable.
 
-    public class BadMath
+    public  class BadMath
     {
         // Constructor
         /*
@@ -15,7 +15,9 @@ namespace Lesson3
         }
 */
         //Property
-        private int currentValue = 0;  //backing field
+        public int currentValue = 0;  //backing field
+        //private int currentValue = 0;  //backing field
+
         private int offset = 0;
         public int CurrentValue
         {
