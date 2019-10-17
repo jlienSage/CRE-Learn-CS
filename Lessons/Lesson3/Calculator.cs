@@ -8,9 +8,6 @@ namespace Lesson3
         // private field backing field
         private decimal store = 0.0M;
 
-        public bool notdone = true;
-        public bool done = false;
-
         public decimal Store
         {
             get { return store; }
@@ -22,7 +19,7 @@ namespace Lesson3
         }
 
 
-        public decimal Add(decimal first)
+        public virtual decimal Add(decimal first)
         {
             Store = first + store;
 
@@ -30,7 +27,7 @@ namespace Lesson3
 
         }
 
-        public decimal Subtract(decimal first)
+        public virtual decimal Subtract(decimal first)
         {
             Store = store - first;
 
@@ -43,7 +40,7 @@ namespace Lesson3
 
             return Store;
         }
-        public decimal Divide(decimal first)
+        public virtual decimal Divide(decimal first)
         {
             Store = store / first;
 
@@ -56,12 +53,6 @@ namespace Lesson3
 
             return;
         }
-        public void Exit()
-        {
-
-            return;
-        }
-
     }
 }
 

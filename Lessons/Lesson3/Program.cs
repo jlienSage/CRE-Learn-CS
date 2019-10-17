@@ -12,8 +12,8 @@ namespace Lesson3
             char op;
             //Calculator calculator = new Calculator();  //Replace globally breakme with calculator to fix my calculator.
             BreakMe breakme = new BreakMe();
-
-            while (breakme.notdone)
+            var done = false;
+            while (!done)
             {
                 Console.Write("Enter value: ");
                 first = Convert.ToDecimal(Console.ReadLine());
@@ -50,7 +50,7 @@ namespace Lesson3
                         break;
 
                     case 'X':
-                        breakme.notdone = false;
+                        done = true;
                         Console.WriteLine("Program has exited");
                         return;
 
