@@ -4,8 +4,24 @@ namespace Lesson3
 {
     public class MisCalculate : RichMath
     {
-        // Constructor1
-        // ??? why do I get error "member names cannot be the same as their enclosing type"
+                
+        //Consturctor - no parameters
+        public  MisCalculate() 
+        {
+            base.currentValue = 500;
+        }
+        
+        //Constructor - 1 parameter
+        //Syntax error: "There is no argument given that corresponds to the 
+        //required formal parameter 'initValue' of ...
+        /* public  MisCalculate(int initValue) 
+        {
+            base.currentValue = initValue;
+        }
+        */
+
+        // Constructor - 2 parameters
+        // Syntax error: "member names cannot be the same as their enclosing type"
         /* 
          public MisCalculate (int initValue, int initOffset)
         {
@@ -15,18 +31,7 @@ namespace Lesson3
         */
         
 
-        //Constructor - I get an error "There is no argument given that corresponds to the 
-        //required formal parameter 'initValue' of ...
-        /* public  MisCalculate(int initValue) 
-        {
-            base.currentValue = initValue;
-        }
-        */
-        
-        public  MisCalculate() 
-        {
-            base.currentValue = 500;
-        }
+
         // variables
         private int offset = 7;
 

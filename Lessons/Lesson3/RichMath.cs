@@ -80,7 +80,7 @@ namespace Lesson3
                 return 1;
             }
         }
-        public virtual void Clear()
+        public void Clear()
         {
             currentValue = 0;
         }
