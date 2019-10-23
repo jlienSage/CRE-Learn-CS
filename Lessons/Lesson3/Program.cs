@@ -18,15 +18,14 @@ namespace Lesson3
                 Demonstrate your class's functionality by utilizing it within this Main() method.
             */
             int offset = 0;
-            int oper0 = 0;      //for initial value
-            int oper1 = 1;      //for add
-            int oper2 = 2;      //for subtract
-            int oper3 = 3;      //for multiply
-            int oper4 = 4;      //for divide
+            int initialValue = 0;    //for initial value
+            int oper1 = 1;           //for add
+            int oper2 = 2;           //for subtract
+            int oper3 = 3;           //for multiply
+            int oper4 = 4;           //for divide
 
             //BadMath myMath = new BadMath(oper0);
-            BadMath myMath = new MisCalculate();
-
+            RichMath myMath = new MisCalculate();
 
             //myMath.initValue(oper0);
             Console.WriteLine($"CurrentValue: {myMath.CurrentValue}");

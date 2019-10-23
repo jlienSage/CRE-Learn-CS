@@ -4,16 +4,28 @@ namespace Lesson3
 {
     // look into field, property and backing variable.
 
-    public  class BadMath
+    public class RichMath
     {
-        // Constructor
+        //Consturctor - 1 parameter
         /*
-        public BadMath(int initValue, int initOffset)
+        public RichMath (int initValue)
         {
-            offset = initOffset;
             currentValue = initValue;
         }
-*/
+        */
+
+        // Constructor - 2 parameters
+        // Syntax error: "member names cannot be the same as their enclosing type"
+        /* 
+        public void RichMath(int initValue, int initOffset)
+        {
+            offset = initOffset;
+            base.currentValue = initValue;
+        }
+        */
+
+
+
         //Property
         protected int currentValue = 0;  //backing field
         //private int currentValue = 0;  //backing field
@@ -25,10 +37,12 @@ namespace Lesson3
             {
                 return currentValue;
             }
-            //set
-            //{
-            //    currentValue = value;
-            //}
+            //set - for later use
+            /*
+            {
+                currentValue = value;
+            }
+            */
         }
 
         
