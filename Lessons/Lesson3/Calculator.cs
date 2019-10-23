@@ -17,24 +17,30 @@ namespace Lesson3
 
         public void Add(int num)
         {
-            currentValue = currentValue + num +1;
+            currentValue = currentValue + num;
         }
         public void Multiply(int num)
         {
-            currentValue = currentValue * num + 1;
+            currentValue = currentValue * num;
         }
 
         public void Subtract(int num)
         {
-            currentValue = currentValue - num + 1;
+            currentValue = currentValue - num;
         }
         public void Divide(int num)
         {
-            currentValue = currentValue / num + 1;
+            currentValue = currentValue / num;
         }
         public void Clear()
         {
             currentValue = 0;
         }
     }
+
+    public class Broken : Calculator
+    {
+        
+    }
 }
+    
