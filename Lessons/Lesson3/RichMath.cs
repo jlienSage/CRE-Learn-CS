@@ -6,6 +6,12 @@ namespace Lesson3
 
     public class RichMath
     {
+        //Consturctor - 0 parameter
+        public RichMath ()
+        {
+            currentValue = 0;
+        }
+        
         //Consturctor - 1 parameter
         /*
         public RichMath (int initValue)
