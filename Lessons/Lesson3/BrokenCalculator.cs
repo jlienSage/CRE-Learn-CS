@@ -2,7 +2,7 @@ namespace Lesson3
 {
     using System;
 
-    public class BrokenCalculator
+    public class BrokenCalculator : Calculator
     {
         private readonly decimal moduloValue;
 
@@ -11,40 +11,28 @@ namespace Lesson3
             moduloValue = (decimal)resetIfDivisibleBy;
         }
 
-        public decimal CurrentValue { get; private set; }
-
-        public void Add(decimal x)
+        public override void Add(decimal x)
         {
             ResetIfModuloZero(x);
-            CurrentValue += x;
+            base.Add(x);
         }
 
-        public void Subtract(decimal x)
+        public override void Subtract(decimal x)
         {
             ResetIfModuloZero(x);
-            CurrentValue -= x;
+            base.Subtract(x);
         }
 
-        public void Multiply(decimal x)
+        public override void Multiply(decimal x)
         {
             ResetIfModuloZero(x);
-            CurrentValue *= x;
+            base.Multiply(x);
         }
 
-        public void Divide(decimal x)
+        public override void Divide(decimal x)
         {
-            if(x == 0M)
-            {
-                throw new ArgumentException("Doh! Divide by zero...");
-            }
-
             ResetIfModuloZero(x);
-            CurrentValue /= x;
-        }
-
-        public void Clear()
-        {
-            CurrentValue = 0M;
+            base.Divide(x);
         }
 
         private void ResetIfModuloZero(decimal x)
