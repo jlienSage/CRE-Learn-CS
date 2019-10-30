@@ -20,8 +20,26 @@ namespace Lesson3
                     overrides the functionality with your broken functionality. This should mostly be refactoring, no new behavior.
                     You are NOT allowed to modify your demonstration in this method, it should still compile and run.
 
-                Demonstrate your class's functionality by utilizing it within this Main() method.
+                Part 3:
+                    Refactor both of your calculator classes to implement the provided interface, instead of using inheritance.
+                    Then, uncomment the following lines and modify ONLY lines 28 and 30 in this Main() method to create instances of your classes and pass them to the private method.
             */
+            
+            // ICalculator calculator = new ...
+            // DoCalculator(calculator);
+            // calculator = new ...
+            // DoCalculator(calculator);
+        }
+
+        private static void DoCalculator(ICalculator calculator)
+        {
+            calculator.Add(3);
+            var currVal = calculator.CurrentValue;
+            Console.WriteLine($"Current value is: {currVal}");
+            calculator.Subtract(2);
+            currVal = calculator.CurrentValue;
+            Console.WriteLine($"Current value is: {currVal}");
+            calculator.Divide(4);
         }
     }
 }
