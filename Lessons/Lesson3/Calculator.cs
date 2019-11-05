@@ -5,7 +5,7 @@ namespace Lesson3
 
     public class Calculator
     {
-        private decimal currentValue = 0;
+        protected decimal currentValue = 0;
         public decimal CurrentValue
         {
             get
@@ -15,20 +15,20 @@ namespace Lesson3
         }
 
 
-        public void Add(int num)
+        public virtual void Add(int num)
         {
             currentValue = currentValue + num;
         }
-        public void Multiply(int num)
+        public virtual void Multiply(int num)
         {
             currentValue = currentValue * num;
         }
 
-        public void Subtract(int num)
+        public virtual void Subtract(int num)
         {
             currentValue = currentValue - num;
         }
-        public void Divide(int num)
+        public virtual void Divide(int num)
         {
             currentValue = currentValue / num;
         }
@@ -38,9 +38,6 @@ namespace Lesson3
         }
     }
 
-    public class Broken : Calculator
-    {
-        
-    }
+    
 }
     

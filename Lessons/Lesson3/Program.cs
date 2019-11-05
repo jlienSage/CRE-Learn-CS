@@ -6,11 +6,21 @@ namespace Lesson3
     {
         static void Main(string[] args)
         {
-            Calculator calc = new Calculator ();
+            //Calculator calc = new Calculator ();
+
+            Calculator calc = new BrokenCalculator();
+
             calc.Add(10);
+            Console.WriteLine ($"CurrentValue: {calc.CurrentValue}");
+
             calc.Multiply(2);
+            Console.WriteLine ("Multiply: " + calc.CurrentValue);
+
             calc.Subtract(25);
+            Console.WriteLine ("Subtract: " + calc.CurrentValue);
+
             calc.Divide(4);
+            Console.WriteLine ("Divide: " + calc.CurrentValue);
 
             var x = calc.CurrentValue;
 
