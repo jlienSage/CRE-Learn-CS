@@ -17,19 +17,18 @@ namespace Lesson3
         {
             currentValue = currentValue + num1;
         }
-        public void Subtract(int num1)
+        public virtual void Subtract(int num1)
         {
             currentValue = currentValue - num1;
         }
-        public void Multiplication(int num1)
+        public virtual void Multiplication(int num1)
         {
             currentValue = currentValue * num1;
         }
-        public int Division(int num1)
+        public virtual int Division(int num1)
         {
             if (num1 == 0)
             {
-                currentValue = 0;
                 return 0;
             }
             else

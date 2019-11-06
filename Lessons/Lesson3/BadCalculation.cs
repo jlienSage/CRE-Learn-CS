@@ -7,7 +7,7 @@ namespace Lesson3
     {
         public override void Add(int num1)
         {
-            currentValue = currentValue + num1 +1;
+            base.Add(num1 + 1);
         }
     }
 }
