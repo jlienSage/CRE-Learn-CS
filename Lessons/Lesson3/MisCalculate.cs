@@ -14,11 +14,11 @@ namespace Lesson3
         //Constructor - 1 parameter
         //Syntax error: "There is no argument given that corresponds to the 
         //required formal parameter 'initValue' of ...
-        /* public  MisCalculate(int initValue) 
+         public  MisCalculate(int initValue) 
         {
             base.currentValue = initValue;
         }
-        */
+        
 
         // Constructor - 2 parameters
         // Syntax error: "member names cannot be the same as their enclosing type"
