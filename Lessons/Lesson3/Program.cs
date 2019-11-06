@@ -20,43 +20,26 @@ namespace Lesson3
                     overrides the functionality with your broken functionality. This should mostly be refactoring, no new behavior.
                     You are NOT allowed to modify your demonstration in this method, it should still compile and run.
 
-                Demonstrate your class's functionality by utilizing it within this Main() method.
+                Part 3:
+                    Refactor both of your calculator classes to implement the provided interface, instead of using inheritance.
+                    Then, uncomment the following lines and modify ONLY lines 28 and 30 in this Main() method to create instances of your classes and pass them to the private method.
             */
-            int offset = 0;
-            int initialValue = 0;    //for initial value
-            int oper1 = 1;           //for add
-            int oper2 = 2;           //for subtract
-            int oper3 = 3;           //for multiply
-            int oper4 = 4;           //for divide
+            
+            // ICalculator calculator = new ...
+            // DoCalculator(calculator);
+            // calculator = new ...
+            // DoCalculator(calculator);
+        }
 
-            //BadMath myMath = new BadMath(oper0);
-            RichMath myMath = new MisCalculate();
-
-            //myMath.initValue(oper0);
-            Console.WriteLine($"CurrentValue: {myMath.CurrentValue}");
-
-            myMath.Add(oper1);
-            Console.WriteLine($"Addition Result: {myMath.CurrentValue}");
-
-            myMath.Subtract(oper2);
-            Console.WriteLine($"Subtraction Result: {myMath.CurrentValue}");
-
-            myMath.Multiply(oper3);
-            Console.WriteLine($"Multiplication Result: {myMath.CurrentValue}");
-
-            //myMath.Divide(oper4);
-            if (myMath.Divide(oper4) == 0)
-            {
-                Console.WriteLine("ERROR: Divide by 0");
-            }
-            else
-            {
-                Console.WriteLine($"Division Result: {myMath.CurrentValue}");
-            }
-           
-            myMath.Clear();
-            Console.WriteLine($"Clear Result: {myMath.CurrentValue}");
-
+        private static void DoCalculator(ICalculator calculator)
+        {
+            calculator.Add(3);
+            var currVal = calculator.CurrentValue;
+            Console.WriteLine($"Current value is: {currVal}");
+            calculator.Subtract(2);
+            currVal = calculator.CurrentValue;
+            Console.WriteLine($"Current value is: {currVal}");
+            calculator.Divide(4);
         }
     }
 }
