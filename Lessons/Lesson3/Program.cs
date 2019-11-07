@@ -25,21 +25,29 @@ namespace Lesson3
                     Then, uncomment the following lines and modify ONLY lines 28 and 30 in this Main() method to create instances of your classes and pass them to the private method.
             */
             
-            // ICalculator calculator = new ...
-            // DoCalculator(calculator);
-            // calculator = new ...
-            // DoCalculator(calculator);
+            ICalculator calculator = new RichMath();
+            DoCalculator(calculator);
+            calculator = new MisCalculate();
+            DoCalculator(calculator);
         }
 
         private static void DoCalculator(ICalculator calculator)
         {
             calculator.Add(3);
             var currVal = calculator.CurrentValue;
-            Console.WriteLine($"Current value is: {currVal}");
+            Console.WriteLine($"Current ADD value is: {currVal}");
+
             calculator.Subtract(2);
             currVal = calculator.CurrentValue;
-            Console.WriteLine($"Current value is: {currVal}");
+            Console.WriteLine($"Current SUBTRACT value is: {currVal}");
+
+            calculator.Multiply(5);
+            currVal = calculator.CurrentValue;
+            Console.WriteLine($"Current MULTIPLY value is: {currVal}");
+
             calculator.Divide(4);
+                        currVal = calculator.CurrentValue;
+                        Console.WriteLine($"Current DIVIDE value is: {currVal}");
         }
     }
 }

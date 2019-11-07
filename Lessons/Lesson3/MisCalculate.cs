@@ -2,7 +2,8 @@ using System;
 
 namespace Lesson3
 {
-    public class MisCalculate : RichMath
+    //public class MisCalculate : RichMath
+    public class MisCalculate : RichMath, ICalculator
     {
                 
         //Consturctor - no parameters
@@ -35,33 +36,33 @@ namespace Lesson3
         // variables
         private int offset = 7;
 
-        public override void Add(int op2)
+        public override void Add(decimal op2)
         {
             base.Add(op2 + offset);
         }
 
         
-        public override void Subtract(int op2)
+        public override void Subtract(decimal op2)
         {
             base.Subtract(op2 + offset);
         }
 
-        public override void Multiply(int op2)
+        public override void Multiply(decimal op2)
         {
             base.Multiply(op2 + offset);
         }
-        public override int Divide(int op2)
+        public override void Divide(decimal op2)
         {
             if (op2 == 0)
             {
                 //Console.WriteLine("Error: Can't Divide by 0; Setting Divisor to \"1\"");
                 //currentValue = 0;
-                return 0;
+                //return 0;
             }
             else
             {
                 base.Divide(op2 + offset);
-                return 1;
+                //return 1;
             }
             
         }
