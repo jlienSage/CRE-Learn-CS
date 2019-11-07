@@ -2,10 +2,10 @@ using System;
 
 namespace Lesson3
 {
-    public class Calculator
+    public class Calculator : ICalculator
     {
-        protected double currentValue = 0;
-        public double newTotal
+        private decimal currentValue = 0;
+        public decimal CurrentValue
         {
             get
             {
@@ -13,21 +13,24 @@ namespace Lesson3
             }
         }
 
-        public virtual void Add(int num1)
+        public virtual void Add(decimal x)
         {
-            currentValue = currentValue + num1;
+            currentValue = currentValue + x;
         }
-        public virtual void Subtract(int num1)
+        public virtual void Subtract(decimal x)
         {
-            currentValue = currentValue - num1;
+            currentValue = currentValue - x;
         }
-        public virtual void Multiplication(int num1)
+        public virtual void Multiply(decimal x)
         {
-            currentValue = currentValue * num1;
+            currentValue = currentValue * x;
         }
-        public virtual int Division(int num1)
+        public virtual void Divide(decimal x)
         {
-            if (num1 == 0)
+            currentValue = currentValue / x;
+        }
+    /*     {
+            if (x == 0)
             {
                 return 0;
             }
@@ -38,6 +41,7 @@ namespace Lesson3
             }
             
         }
+        */
         public void Clear()
         {
             currentValue = 0;
