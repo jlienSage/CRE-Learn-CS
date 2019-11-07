@@ -3,12 +3,12 @@ using System;
 
 namespace Lesson3
 {
-    public class Calculator
+    public class Calculator : ICalculator
     {
         // private field backing field
         private decimal store = 0.0M;
 
-        public decimal Store
+        public decimal CurrentValue
         {
             get { return store; }
             set
@@ -19,32 +19,32 @@ namespace Lesson3
         }
 
 
-        public virtual decimal Add(decimal first)
+        public virtual void Add(decimal first)
         {
-            Store = first + store;
+            CurrentValue = first + store;
 
-            return Store;
+         //   return Store;
 
         }
 
-        public virtual decimal Subtract(decimal first)
+        public virtual void Subtract(decimal first)
         {
-            Store = store - first;
+            CurrentValue = store - first;
 
-            return Store;
+          //  return Store;.
         }
 
-        public virtual decimal Multiply(decimal first)
+        public virtual void Multiply(decimal first)
         {
-            Store = first * store;
+            CurrentValue = first * store;
 
-            return Store;
+         //   return Store;
         }
-        public virtual decimal Divide(decimal first)
+        public virtual void Divide(decimal first)
         {
-            Store = store / first;
+            CurrentValue = store / first;
 
-            return Store;
+         //   return Store;
         }
 
         public void Clear()
