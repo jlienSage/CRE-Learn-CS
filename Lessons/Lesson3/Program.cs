@@ -29,6 +29,7 @@ namespace Lesson3
             DoCalculator(calculator);
             calculator = new MisCalculate();
             DoCalculator(calculator);
+            Console.WriteLine("That's all folks");
         }
 
         private static void DoCalculator(ICalculator calculator)

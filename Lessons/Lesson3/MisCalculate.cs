@@ -3,13 +3,13 @@ using System;
 namespace Lesson3
 {
     //public class MisCalculate : RichMath
-    public class MisCalculate : RichMath, ICalculator
+    public class MisCalculate : ICalculator
     {
                 
         //Consturctor - no parameters
         public  MisCalculate() 
         {
-            base.currentValue = 500;
+            currentValue = 500;
         }
         
         //Constructor - 1 parameter
@@ -17,7 +17,7 @@ namespace Lesson3
         //required formal parameter 'initValue' of ...
          public  MisCalculate(int initValue) 
         {
-            base.currentValue = initValue;
+            currentValue = initValue;
         }
         
 
@@ -31,27 +31,46 @@ namespace Lesson3
         }
         */
         
+        //Property
+        protected decimal currentValue = 0;  //backing field
 
+        public decimal CurrentValue
+        {
+            get
+            {
+                return currentValue;
+            }
+            //set - for later use
+            /*
+            {
+                currentValue = value;
+            }
+            */
+        }
 
         // variables
-        private int offset = 7;
+        private decimal offset = 7;
 
-        public override void Add(decimal op2)
+        public virtual void Add(decimal op2)
         {
-            base.Add(op2 + offset);
+            // base.Add(op2 + offset);
+            currentValue = (currentValue + op2) + offset;
         }
 
         
-        public override void Subtract(decimal op2)
+        public virtual void Subtract(decimal op2)
         {
-            base.Subtract(op2 + offset);
+            //base.Subtract(op2 + offset);
+            currentValue = (currentValue - op2) + offset;
         }
 
-        public override void Multiply(decimal op2)
+        public virtual void Multiply(decimal op2)
         {
-            base.Multiply(op2 + offset);
+            //base.Multiply(op2 + offset);
+            currentValue = (currentValue * op2) + offset;
         }
-        public override void Divide(decimal op2)
+
+        public virtual void Divide(decimal op2)
         {
             if (op2 == 0)
             {
@@ -61,10 +80,16 @@ namespace Lesson3
             }
             else
             {
-                base.Divide(op2 + offset);
+                //base.Divide(op2 + offset);
+                currentValue = (currentValue / op2) + offset;
                 //return 1;
             }
             
+        }
+
+        public void Clear()
+        {
+            currentValue = 0;
         }
     }
 }
