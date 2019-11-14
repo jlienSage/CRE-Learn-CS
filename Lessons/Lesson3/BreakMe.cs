@@ -19,22 +19,21 @@ namespace Lesson3
         public virtual void Multiply(decimal first)
         {
             CurrentValue = first + 25;
-            //return Subtract(first);
         }
         public virtual void Add(decimal first)
         {
             CurrentValue = first - 25;
-            //return Subtract(first);
+
         }
         public virtual void Subtract(decimal first)
         {
             CurrentValue = first + 25;
-            //return Subtract(first);
+
         }
         public virtual void Divide(decimal first)
         {
             CurrentValue = store / first;
-            //   return Store;
+
         }
         public void Clear()
         {
