@@ -34,7 +34,6 @@ namespace Lesson3
         public virtual void Divide(decimal first)
         {
             CurrentValue = store / first;
-
             //   return Store;
         }
         public void Clear()
