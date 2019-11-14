@@ -2,7 +2,7 @@ namespace Lesson3
 {
     using System;
 
-    public class Calculator
+    public class Calculator : ICalculator
     {
         public decimal CurrentValue { get; protected set; }
 

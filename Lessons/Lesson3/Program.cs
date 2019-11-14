@@ -25,10 +25,10 @@ namespace Lesson3
                     Then, uncomment the following lines and modify ONLY lines 28 and 30 in this Main() method to create instances of your classes and pass them to the private method.
             */
             
-            // ICalculator calculator = new ...
-            // DoCalculator(calculator);
-            // calculator = new ...
-            // DoCalculator(calculator);
+            ICalculator calculator = new Calculator();
+            DoCalculator(calculator);
+            calculator = new BrokenCalculator(2);
+            DoCalculator(calculator);
         }
 
         private static void DoCalculator(ICalculator calculator)
