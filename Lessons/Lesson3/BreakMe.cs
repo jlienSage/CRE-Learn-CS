@@ -3,22 +3,45 @@ using System;
 
 namespace Lesson3
 {
-    public class BreakMe : Calculator
+    public class BreakMe : ICalculator
     {
-        public override void Multiply(decimal first)
+        // private field backing field
+        private decimal store = 0.0M;
+        public decimal CurrentValue
         {
-           CurrentValue = first + 25;
-           //return Subtract(first);
+            get { return store; }
+            set
+            {
+                if (value != store)
+                    store = value;
+            }
         }
-        public override void Add(decimal first)
+        public virtual void Multiply(decimal first)
         {
-           CurrentValue = first - 25;
-           //return Subtract(first);
+            CurrentValue = first + 25;
+            //return Subtract(first);
         }
-        public override void Subtract(decimal first)
+        public virtual void Add(decimal first)
         {
-           CurrentValue = first + 25;
-           //return Subtract(first);
+            CurrentValue = first - 25;
+            //return Subtract(first);
+        }
+        public virtual void Subtract(decimal first)
+        {
+            CurrentValue = first + 25;
+            //return Subtract(first);
+        }
+        public virtual void Divide(decimal first)
+        {
+            CurrentValue = store / first;
+
+            //   return Store;
+        }
+        public void Clear()
+        {
+            store = 0.0M;
+
+            return;
         }
 
     }
