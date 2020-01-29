@@ -13,22 +13,24 @@ namespace Lesson3
         }
         
         //Consturctor - 1 parameter
-        /*
+        
         public RichMath (int initValue)
         {
             currentValue = initValue;
         }
-        */
+        
+
+
 
         // Constructor - 2 parameters
         // Syntax error: "member names cannot be the same as their enclosing type"
-        /* 
+        
         public void RichMath(int initValue, int initOffset)
         {
             offset = initOffset;
             base.currentValue = initValue;
         }
-        */
+        
 
 
 
