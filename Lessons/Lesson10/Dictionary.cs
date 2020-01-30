@@ -31,26 +31,29 @@ namespace DataStructure
 
             // Determine key '2' exists in Dictionary
 
-            if (dict.ContainsKey(2) == true)
+            var KeyV = 2;
+            var Valu = "Six";
+
+            if (dict.ContainsKey(KeyV) == true)
             {
-                Console.WriteLine($"Key 2 is found");
+                Console.WriteLine($"Key {KeyV} is found");
             }
 
             else
             {
-                Console.WriteLine($"Key 2 is not found");
+                Console.WriteLine($"Key {KeyV} is not found");
             }
 
             //Determine value 'Six' exists in Dictionary
 
-            if (dict.ContainsValue("Six") == true)
+            if (dict.ContainsValue(Valu) == true)
             {
-                Console.WriteLine($"Value six is found");
+                Console.WriteLine($"Value {Valu} is found");
             }
 
             else
             {
-                Console.WriteLine($"Value six is not found");
+                Console.WriteLine($"Value {Valu} is not found");
             }
 
             //Display Key, value pair using for or foreach loop
