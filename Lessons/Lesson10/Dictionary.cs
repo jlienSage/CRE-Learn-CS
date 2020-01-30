@@ -33,33 +33,33 @@ namespace DataStructure
 
             if (dict.ContainsKey(2) == true)
             {
-                Console.WriteLine($"Key is found...!!");
+                Console.WriteLine($"Key 2 is found");
             }
 
             else
             {
-                Console.WriteLine($"Key is not found...!!");
+                Console.WriteLine($"Key 2 is not found");
             }
 
             //Determine value 'Six' exists in Dictionary
 
             if (dict.ContainsValue("Six") == true)
             {
-                Console.WriteLine($"Value is found...!!");
+                Console.WriteLine($"Value six is found");
             }
 
             else
             {
-                Console.WriteLine($"Value is not found...!!");
+                Console.WriteLine($"Value six is not found");
             }
 
             //Display Key, value pair using for or foreach loop
 
 
-            foreach (KeyValuePair<int, string> ele in dict)
+            foreach (KeyValuePair<int, string> val in dict)
             {
                 Console.WriteLine("{0} and {1}",
-                            ele.Key, ele.Value);
+                            val.Key, val.Value);
             }
             Console.WriteLine();
         }
