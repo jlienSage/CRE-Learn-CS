@@ -1,28 +1,42 @@
 namespace Lesson3
 {
 
-    public class BrokenCalculator : Calculator
+    public class BrokenCalculator : ICalculator
     {
-          public override void Add(int num)
+
+        protected decimal currentValue = 0;
+        public decimal CurrentValue
         {
-            //currentValue = currentValue + num +1;
-            base.Add(num +1);
+            get
+            {
+                return currentValue;
+            }
         }
-         public override void Multiply(int num)
+          public void Add(decimal num)
         {
-            //currentValue = currentValue * num +1;
-            base.Multiply(num *2);
+            currentValue = currentValue + num +1;
+            //base.Add(num +1);
+        }
+         public void Multiply(decimal num)
+        {
+            currentValue = currentValue * num +1;
+            //base.Multiply(num *2);
         }
 
-         public override void Subtract(int num)
+         public void Subtract(decimal num)
         {
-           //currentValue = currentValue - num +1;
-           base.Subtract(num +2);
+           currentValue = currentValue - num +1;
+           //base.Subtract(num +2);
         }
-         public override void Divide(int num)
+         public void Divide(decimal num)
         {
-            //currentValue = currentValue / num +1;
-            base.Divide(num +5);
+            currentValue = currentValue / num +1;
+            //base.Divide(num +5);
+        }
+
+        public void Clear()
+        {
+            currentValue = 0;
         }
         
     }
