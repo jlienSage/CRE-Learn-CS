@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DataStructure
 {
@@ -8,15 +9,15 @@ namespace DataStructure
         {
             // Datastructe Implementation in C#
 
-            Lesson10.Array();
-            Lesson10.ArrayList();
+            //Lesson10.Array();
+            //Lesson10.ArrayList();
             //Lesson10.List();
             //Lesson10.LinkedList();
             //Lesson10.Hashtable();
             //Lesson10.Dictionary();
             //Lesson10.HashSet();
             //Lesson10.Stack();
-            //Lesson10.Queue();
+            Lesson10.Queue();
         }
     }
 }
