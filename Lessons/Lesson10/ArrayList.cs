@@ -18,9 +18,10 @@ namespace DataStructure
             myAL.Add(25);
             
             myAL.Add(36.3);
-            myAL.Add(36.3);
+            myAL.Add(36.4);
             myAL.RemoveAt(3);
             
+            myAL.Add("RICH string added");
             
 
             // Displays the properties and values of the ArrayList.
