@@ -17,6 +17,15 @@ namespace DataStructure
             Lesson10.HashSet();
             Lesson10.Stack();
             Lesson10.Queue();
+
+            // Extension method example:            
+            object x = new DateTime(2020,1,2);
+            // var y = (DateTime)x;
+            var success = x.TryCast<DateTime>(out var z);
+            if(success)
+            {
+                Console.WriteLine("yay.");
+            }
         }
     }
 }
