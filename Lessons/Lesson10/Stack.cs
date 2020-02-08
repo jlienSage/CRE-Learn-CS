@@ -66,6 +66,7 @@ namespace DataStructure
                     Console.WriteLine("Popping '{0}'", CoWorker_stack.Pop());
                     Console.Write("\tValues:");
                     PrintValuesCoWorker(CoWorker_stack);
+                    //Adding John back into the stack.
                     Console.Write("Adding John back into stack");
                     CoWorker_stack.Push("John");
                     PrintValuesCoWorker(CoWorker_stack);
