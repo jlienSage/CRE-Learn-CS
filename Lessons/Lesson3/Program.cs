@@ -1,10 +1,12 @@
 ﻿using System;
 
+
+
 namespace Lesson3
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             /* 
                 Part 1:           
@@ -25,10 +27,10 @@ namespace Lesson3
                     Then, uncomment the following lines and modify ONLY lines 28 and 30 in this Main() method to create instances of your classes and pass them to the private method.
             */
             
-            // ICalculator calculator = new ...
-            // DoCalculator(calculator);
-            // calculator = new ...
-            // DoCalculator(calculator);
+            ICalculator calculator = new Calculator();
+            DoCalculator(calculator);
+            calculator = new BreakMe();
+            DoCalculator(calculator);
         }
 
         private static void DoCalculator(ICalculator calculator)
@@ -39,7 +41,12 @@ namespace Lesson3
             calculator.Subtract(2);
             currVal = calculator.CurrentValue;
             Console.WriteLine($"Current value is: {currVal}");
-            calculator.Divide(4);
+            calculator.Multiply(4);
+            currVal = calculator.CurrentValue;
+            Console.WriteLine($"Current value is: {currVal}");
         }
     }
 }
+
+
+
