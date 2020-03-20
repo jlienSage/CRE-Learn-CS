@@ -1,6 +1,6 @@
 namespace Recap.One
 {
-    public abstract class Item
+    public abstract class Item 
     {
         public abstract string Name { get; }
 

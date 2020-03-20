@@ -1,5 +1,7 @@
 ﻿using System;
 
+
+
 namespace Recap.One
 {
     /*
@@ -16,18 +18,28 @@ namespace Recap.One
     {
         public static void Main(string[] args)
         {
-            ICart cart = null; // TODO create instance of cart
+            Cart cart = new Cart(); //create instance of cart
 
             var shopping = true;
             while(shopping)
             {
+                Console.WriteLine("Do you have an item to add to cart?");
                 var command = Console.ReadLine();
-                switch(command)
+                switch (command)
                 {
                     // TODO add items to cart based on command
+                    case "TP":
+                    TP tp = new TP();
+                    cart.AddToCart(tp);
+                        break;
+                    case "HandSani":
+                    HandSani handsani = new HandSani();
+                    cart.AddToCart(handsani);
+                        break;
                     case "done":
                         shopping = false;
                         break;
+
                 }
             }
             
@@ -37,9 +49,11 @@ namespace Recap.One
         private static void ProcessCart(ICart cart)
         {
             Console.WriteLine($"{cart.TotalItems} items in cart:");
+            decimal TotalPrice = 0;
             foreach(var item in cart.Items)
             {
                 Console.WriteLine($"{item.Name}: ${item.Price}");
+                TotalPrice += item.Price; //+= is shorthand for TotalPrice = TotalPrice + item.Price
             }
             cart.ClearCart();
             Console.WriteLine("Total price: "); // TODO
