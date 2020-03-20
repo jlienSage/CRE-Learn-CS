@@ -23,7 +23,7 @@ namespace Recap.One
             var shopping = true;
             while(shopping)
             {
-                Console.WriteLine("Do you have an item to add to cart?");
+                Console.WriteLine("Add your item to the cart");
                 var command = Console.ReadLine();
                 switch (command)
                 {
@@ -35,7 +35,7 @@ namespace Recap.One
                     case "HandSani":
                     HandSani handsani = new HandSani();
                     cart.AddToCart(handsani);
-                        break;
+                         break;
                     case "done":
                         shopping = false;
                         break;
