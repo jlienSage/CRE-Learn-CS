@@ -4,8 +4,8 @@ namespace Recap.One
 {
     /*
         Exercise:
-            1. Create an implementation of ICart
-            2. Create Item subclasses
+            1. Create an implementation of ICart (creates new file)
+            2. Create Item subclasses (should a new file)
             3. Add to cart in switch based on read command
             4. Calculate total price
         
@@ -17,7 +17,7 @@ namespace Recap.One
         public static void Main(string[] args)
         {
             ICart cart = null; // TODO create instance of cart
-
+            
             var shopping = true;
             while(shopping)
             {
@@ -33,6 +33,8 @@ namespace Recap.One
             
             ProcessCart(cart);
         }
+
+        
 
         private static void ProcessCart(ICart cart)
         {
