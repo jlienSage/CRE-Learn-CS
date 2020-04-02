@@ -19,11 +19,23 @@ namespace Recap.One.One
         public static void Main(string[] args)
         {
             var cart = new List<Item>();
-            // Add items
+            ToiletPaper tp = new ToiletPaper();
+            Plunger plunger = new Plunger();
+            PaperTowels pt = new PaperTowels();
             var total = 0.0M;
+            // Add items
+            cart.Add(tp);
+            cart.Add(plunger);
+            cart.Add(pt);
+
             // Iterate over items to calculate total.
             Console.WriteLine("Items in cart:");
-            cart.ForEach(i => Console.WriteLine($"  {i.Name}: {i.Price}"));
+            // cart.ForEach(i => Console.WriteLine($"  {i.Name}: {i.Price}"))
+            foreach (var i in cart)
+            {
+                Console.WriteLine($"    {i.Name}: {i.Price}");
+                total += i.Price;
+            }
             Console.WriteLine($"Your total is: {total}.");
         }
     }
