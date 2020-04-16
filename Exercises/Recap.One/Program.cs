@@ -3,7 +3,7 @@
 
 namespace Recap.One
 {
-    using rich_item;
+    //using rich_item;
     /*
         Exercise:
             1. Create an implementation of ICart
@@ -45,17 +45,19 @@ namespace Recap.One
                     case "rich":
                         Console.WriteLine ("Hello Rich");
                         break;
-                    case "pencil":
-                        Pencil item = new Pencil();
-                        cart.AddToCart(item);
+                    case "tp":
+                        ToiletPaper tp = new ToiletPaper();
+                        cart.AddToCart(tp);
+                        //cart.AddToCart(new ToiletPaper());
+                        Console.WriteLine($"tp-Name is: {tp.Name}");
                         break;
                     /* case "pen": 
                         Pen item = new Pen();
                         cart.AddToCart(item);
                         break;
                     */
-                    case "notebook":
-                        Console.WriteLine("Sorry, out of stock");
+                    case "plunger":
+                        cart.AddToCart(new Plunger());
                         break;
                     default:
                         Console.WriteLine("Error. Re-enter name");
@@ -68,16 +70,17 @@ namespace Recap.One
 
         private static void ProcessCart(ICart cart)
         {
-            decimal totalPrice = 0;     //richcode
+            decimal total = 0.00M;     //richcode
             Console.WriteLine($"{cart.TotalItems} items in cart:");
             foreach(var item in cart.Items)
             {
+                Console.WriteLine("DEBUG: in main-foreach");
                 Console.WriteLine($"{item.Name}: ${item.Price}");
-                totalPrice =+ item.Price;       //richcode
+                total += item.Price;       //richcode
             }
             cart.ClearCart();
             //Console.WriteLine("Total price: "); // TODO
-            Console.WriteLine("Total Price:  ${totalPrice}");  //richcode
+            Console.WriteLine($"Total Price:  {total}");  //richcode
         }
     }
 }

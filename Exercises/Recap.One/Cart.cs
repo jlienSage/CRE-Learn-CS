@@ -1,42 +1,35 @@
 namespace Recap.One
-
 {
+    using System;
     using System.Collections.Generic;
+
     //implement ICart class
     public class Cart: ICart
     {
- 
+        private List<Item> items;
+
         //Cart Constructor
         public Cart()
         {
-            // 
-            Items = new List<Item>();
+            // Cart is a list of items
+            items = new List<Item>();
         }
 
     
-        IEnumerable<Item> Items { get; }
-        // ??? unsure what to do here
+        public IEnumerable<Item> Items => items; 
+            
 
 
-        public int TotalItems 
-        { 
-            get;
-            private set;
-        }
+        public int TotalItems  => items.Count;
 
         public void AddToCart(Item item)
         {
-
-            //cart[TotalItems++] = item;
-            //item.Name = name;
-            //item.Price = price;
+            items.Add(item);
         }
 
-                
-        void ClearCart()
+        public void ClearCart()
         {
-            cart = null;
-            totalItems = 0;
+            items.Clear();
         }
     }
 
