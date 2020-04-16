@@ -21,9 +21,16 @@ namespace Recap.One.One
             var cart = new List<Item>();
             // Add items
             var total = 0.0M;
+            var TP = new ToiletPaper();
+            cart.Add(TP);
+            var Rice = new Rice();
+            cart.Add(Rice);
+            
+            
             // Iterate over items to calculate total.
             Console.WriteLine("Items in cart:");
             cart.ForEach(i => Console.WriteLine($"  {i.Name}: {i.Price}"));
+            cart.ForEach(i => total += i.Price);
             Console.WriteLine($"Your total is: {total}.");
         }
     }
