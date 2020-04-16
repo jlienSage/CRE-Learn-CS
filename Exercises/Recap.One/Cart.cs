@@ -5,15 +5,21 @@ namespace Recap.One
 {
     class Cart : ICart
     {
-        public IEnumerable<Item> Items { get; }
-        public int TotalItems { get; }
+        //private item new Item();
+        private List<Item> items = new List<Item>();
 
-        public void AddToCart(Item item){
-            
+        public IEnumerable<Item> Items => items;
+
+        public int TotalItems => items.Count;
+
+        public void AddToCart(Item item)
+        {
+            items.Add(item);
 
         }
-        public void ClearCart(){
-
+        public void ClearCart()
+        {
+            items.Clear();
         }
     }
 }

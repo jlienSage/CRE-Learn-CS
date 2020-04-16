@@ -21,7 +21,8 @@ namespace Recap.One
             Cart cart = new Cart(); //create instance of cart
 
             var shopping = true;
-            while(shopping)
+
+            while (shopping)
             {
                 Console.WriteLine("Add your item to the cart");
                 var command = Console.ReadLine();
@@ -29,34 +30,34 @@ namespace Recap.One
                 {
                     // TODO add items to cart based on command
                     case "TP":
-                    TP tp = new TP();
-                    cart.AddToCart(tp);
+                        var tp = new ToiletPaper();
+                        cart.AddToCart(tp);
                         break;
-                    case "HandSani":
-                    HandSani handsani = new HandSani();
-                    cart.AddToCart(handsani);
-                         break;
+                        case "HandSani":
+                        HandSani handsani = new HandSani();
+                        cart.AddToCart(handsani);
+                        break;
                     case "done":
                         shopping = false;
+                        ProcessCart(cart);
                         break;
 
                 }
+
             }
-            
-            ProcessCart(cart);
         }
 
-        private static void ProcessCart(ICart cart)
+        public static void ProcessCart(ICart cart)
         {
             Console.WriteLine($"{cart.TotalItems} items in cart:");
             decimal TotalPrice = 0;
-            foreach(var item in cart.Items)
+            foreach (var item in cart.Items)
             {
                 Console.WriteLine($"{item.Name}: ${item.Price}");
                 TotalPrice += item.Price; //+= is shorthand for TotalPrice = TotalPrice + item.Price
             }
             cart.ClearCart();
-            Console.WriteLine("Total price: "); // TODO
+            Console.WriteLine($"Total price: {TotalPrice};");
         }
     }
 }
