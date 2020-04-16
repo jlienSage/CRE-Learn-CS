@@ -11,7 +11,7 @@ namespace Recap.Two
             if (args.Length > 0 && long.TryParse(args[0], out long numberOfElements))
                 PrintResult(CollectionTester.TestCollections(numberOfElements));
             else
-                PrintResult(CollectionTester.TestCollections(1000));
+                PrintResult(CollectionTester.TestCollections(1000000));
         }
 
         public static void PrintResult(IEnumerable<(string type, long addTime, long lookupTime)> results)

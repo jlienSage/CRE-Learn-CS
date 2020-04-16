@@ -21,15 +21,16 @@ namespace Recap.Two
 
             // ***********
             // TODO for each type of collection
-            // 1. Call AddStrings on an instance of the type and assign the result to a variable
-            // 2. Call LookupStrings on an instance of the type and assign the result to a variable
+            // 1. Create an instance of the type of collection
+            // 2. Call AddStrings on the instance of the type and assign the result to a variable
+            // 3. Call LookupStrings on the instance of the type and assign the result to a variable
             // Collections to test are:
             //    - linked list (List<T>)
             //    - doubley-linked list (LinkedList<T>)
             //    - hash set (HashSet<T>)
             //    - sorted set (SortedSet<T>)
             // ***********
-
+            
             var results = new List<(string type, long addTime, long lookupTime)>
             {
                 (nameof(List<string>), listAddTime, listLookupTime),
@@ -40,7 +41,7 @@ namespace Recap.Two
             return results;
         }
 
-        private static long AddStrings(ICollection<string> s, IList<string> strings)
+        private static long AddStrings(ICollection<string> collection, IList<string> strings)
         {
             var stopwatch = Stopwatch.StartNew();
 
@@ -52,7 +53,7 @@ namespace Recap.Two
             return stopwatch.ElapsedMilliseconds;
         }
 
-        private static long LookupStrings(ICollection<string> s, IList<string> strings)
+        private static long LookupStrings(ICollection<string> collection, IList<string> strings)
         {
             var stopwatch = Stopwatch.StartNew();
 
