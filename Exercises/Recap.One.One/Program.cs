@@ -31,10 +31,10 @@ namespace Recap.One.One
             // Iterate over items to calculate total.
             Console.WriteLine("Items in cart:");
             // cart.ForEach(i => Console.WriteLine($"  {i.Name}: {i.Price}"))
-            foreach (var i in cart)
+            foreach (Item item in cart)
             {
-                Console.WriteLine($"    {i.Name}: {i.Price}");
-                total += i.Price;
+                Console.WriteLine($"    {item.Name}: {item.Price}");
+                total += item.Price;
             }
             Console.WriteLine($"Your total is: {total}.");
         }
