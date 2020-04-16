@@ -7,36 +7,61 @@ namespace Recap.Two
 {
     public static class CollectionTester
     {
-        public static ICollection<(string type, long elapsedMilliseconds)> TestCollections(long numberOfElements)
+        public static IEnumerable<(string type, long addTime, long lookupTime)> TestCollections(long numberOfElements)
         {
             IList<string> strings = GetRandomStrings(numberOfElements);
-            long listMilliseconds = 0;
-            long linkedListMilliseconds = 0;
-            long hashSetMilliseconds = 0;
-            long sortedSetMilliseconds = 0;
-            var stopwatch = Stopwatch.StartNew();
+            long listAddTime = 0;
+            long listLookupTime = 0;
+            long linkedListAddTime = 0;
+            long linkedListLookupTime = 0;
+            long hashSetAddTime = 0;
+            long hashSetLookupTime = 0;
+            long sortedSetAddTime = 0;
+            long sortedSetLookupTime = 0;
 
             // ***********
             // TODO for each type of collection
-            // 1. Call AddThousandElements on an instance of the type
-            // 2. Stop the stopwatch
-            // 3. Assign stopwatch.ElapsedMilliseconds to the appropriate 
-            // 4. Restart the stopwatch
+            // 1. Call AddStrings on an instance of the type and assign the result to a variable
+            // 2. Call LookupStrings on an instance of the type and assign the result to a variable
+            // Collections to test are:
+            //    - linked list (List<T>)
+            //    - doubley-linked list (LinkedList<T>)
+            //    - hash set (HashSet<T>)
+            //    - sorted set (SortedSet<T>)
             // ***********
 
-            var results = new List<(string type, long elapsedMilliseconds)>
+            var results = new List<(string type, long addTime, long lookupTime)>
             {
-                (nameof(List<string>), listMilliseconds),
-                (nameof(LinkedList<string>), linkedListMilliseconds),
-                (nameof(HashSet<string>), hashSetMilliseconds),
-                (nameof(SortedSet<string>), sortedSetMilliseconds)
+                (nameof(List<string>), listAddTime, listLookupTime),
+                (nameof(LinkedList<string>), linkedListAddTime, linkedListLookupTime),
+                (nameof(HashSet<string>), hashSetAddTime, hashSetLookupTime),
+                (nameof(SortedSet<string>), sortedSetAddTime, sortedSetLookupTime)
             };
             return results;
         }
 
-        private static void AddStrings(ICollection<string> s, IList<string> strings)
+        private static long AddStrings(ICollection<string> s, IList<string> strings)
         {
-            // TODO
+            var stopwatch = Stopwatch.StartNew();
+
+            // ***********
+            // TODO implement adding each of the passed strings to the collection, one at a time.
+            // ***********
+
+            stopwatch.Stop();
+            return stopwatch.ElapsedMilliseconds;
+        }
+
+        private static long LookupStrings(ICollection<string> s, IList<string> strings)
+        {
+            var stopwatch = Stopwatch.StartNew();
+
+            // ***********
+            // TODO implement looking up (i.e. does the collection 'Contain' the string) the elements.
+            // ***********
+
+            stopwatch.Stop();
+            return stopwatch.ElapsedMilliseconds;
         }
 
         private static IList<string> GetRandomStrings(long numberOfElements)

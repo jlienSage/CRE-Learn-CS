@@ -7,11 +7,21 @@ namespace Recap.Two
     public class Program
     {
         public static void Main(string[] args)
-        {
+        {            
             if (args.Length > 0 && long.TryParse(args[0], out long numberOfElements))
-                CollectionTester.TestCollections(numberOfElements);
+                PrintResult(CollectionTester.TestCollections(numberOfElements));
             else
-                CollectionTester.TestCollections(1000);
+                PrintResult(CollectionTester.TestCollections(1000));
+        }
+
+        public static void PrintResult(IEnumerable<(string type, long addTime, long lookupTime)> results)
+        {
+            foreach(var result in results)
+            {
+                Console.WriteLine($"{result.type}:");
+                Console.WriteLine($"    Add:    {result.addTime}m");
+                Console.WriteLine($"    Lookup: {result.lookupTime}m");
+            }
         }
     }
 }
