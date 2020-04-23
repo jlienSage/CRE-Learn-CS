@@ -25,6 +25,14 @@ namespace Recap.One
                 switch(command)
                 {
                     // TODO add items to cart based on command
+                    case "Gloves" : 
+                        cart.AddToCart(new Gloves());
+                        break;
+
+                    case "Mask" :
+                        cart.AddToCart (new Mask());
+                        break;
+                        
                     case "done":
                         shopping = false;
                         break;
@@ -37,12 +45,16 @@ namespace Recap.One
         private static void ProcessCart(ICart cart)
         {
             Console.WriteLine($"{cart.TotalItems} items in cart:");
+            decimal total = 0.00M;
+
             foreach(var item in cart.Items)
             {
+                total += item.Price;
+
                 Console.WriteLine($"{item.Name}: ${item.Price}");
             }
             cart.ClearCart();
-            Console.WriteLine("Total price: "); // TODO
+            Console.WriteLine($"Total price: {total}."); 
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 namespace Recap.One.One
+
 {
     /*
         Exercise:
@@ -19,7 +20,14 @@ namespace Recap.One.One
         public static void Main(string[] args)
         {
             var cart = new List<Item>();
+
             // Add items
+            ToiletPaper tp = new ToiletPaper();            
+            cart.Add(tp);            
+            Purell purell = new Purell();
+            cart.Add(purell);
+
+
             var total = 0.0M;
             // Iterate over items to calculate total.
             Console.WriteLine("Items in cart:");
