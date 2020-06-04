@@ -9,7 +9,7 @@ namespace Recap.Two
     {
         public static IEnumerable<(string type, long addTime, long lookupTime)> TestCollections(long numberOfElements)
         {
-            IList<string> strings = GetRandomStrings(numberOfElements);
+           IList<string> strings = GetRandomStrings(numberOfElements);
             long listAddTime = 0;
             long listLookupTime = 0;
             long linkedListAddTime = 0;
@@ -19,11 +19,34 @@ namespace Recap.Two
             long sortedSetAddTime = 0;
             long sortedSetLookupTime = 0;
 
+
+ICollection<string> myList = new List<string>();
+
+listAddTime = AddStrings(myList, strings);
+listLookupTime = LookupStrings(myList, strings);
+
+ICollection<string> myDoubleList = new LinkedList<string>();
+
+linkedListAddTime = AddStrings(myDoubleList, strings);
+linkedListLookupTime = LookupStrings(myDoubleList, strings);
+
+ICollection<string> myHashSet = new HashSet<string>();
+
+hashSetAddTime = AddStrings(myHashSet, strings);
+hashSetLookupTime = LookupStrings(myHashSet, strings);
+
+ICollection<string> mySortedSet = new SortedSet<string>();
+
+sortedSetAddTime = AddStrings(mySortedSet, strings);
+sortedSetLookupTime = LookupStrings(mySortedSet, strings);
+
+            
+
             // ***********
             // TODO for each type of collection
             // 1. Create an instance of the type of collection
-            // 2. Call AddStrings on the instance of the type and assign the result to a variable
-            // 3. Call LookupStrings on the instance of the type and assign the result to a variable
+            // 2. Pass the instance of the type and the strings variable as arguments to AddStrings and assign the return value to the appropriate variable.
+            // 3. Pass the instance of the type and the strings variable as arguments to LookupStrings and assign the return value to the appropriate variable.
             // Collections to test are:
             //    - linked list (List<T>)
             //    - doubley-linked list (LinkedList<T>)
@@ -43,8 +66,15 @@ namespace Recap.Two
 
         private static long AddStrings(ICollection<string> collection, IList<string> strings)
         {
-            var stopwatch = Stopwatch.StartNew();
-
+            var stopwatch = Stopwatch.StartNew();              
+            
+           foreach (var item in strings)
+           {
+               collection.Add(item);
+               //Console.WriteLine(item);
+               
+           }
+            
             // ***********
             // TODO implement adding each of the passed strings to the collection, one at a time.
             // ***********
@@ -56,6 +86,12 @@ namespace Recap.Two
         private static long LookupStrings(ICollection<string> collection, IList<string> strings)
         {
             var stopwatch = Stopwatch.StartNew();
+
+            foreach (var item in collection)
+           {
+               strings.Contains(item);
+                             
+           }
 
             // ***********
             // TODO implement looking up (i.e. does the collection 'Contain' the string) the elements.
