@@ -8,9 +8,11 @@ namespace Recap.Two
     {
         public static void Main(string[] args)
         {            
+            //RD: what is "out long numberOfElements"? how does this get loaded?
             if (args.Length > 0 && long.TryParse(args[0], out long numberOfElements))
                 PrintResult(CollectionTester.TestCollections(numberOfElements));
             else
+                //PrintResult(CollectionTester.TestCollections(1000000));
                 PrintResult(CollectionTester.TestCollections(1000000));
         }
 
