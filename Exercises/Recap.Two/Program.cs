@@ -14,13 +14,14 @@ namespace Recap.Two
                 PrintResult(CollectionTester.TestCollections(1000000));
         }
 
-        public static void PrintResult(IEnumerable<(string type, long addTime, long lookupTime)> results)
+        public static void PrintResult(IEnumerable<(string type, long addTime, long lookupTime, long enumerateTime)> results)
         {
             foreach(var result in results)
             {
                 Console.WriteLine($"{result.type}:");
                 Console.WriteLine($"    Add:    {result.addTime}m");
                 Console.WriteLine($"    Lookup: {result.lookupTime}m");
+                Console.WriteLine($"    Enumerate: {result.enumerateTime}m");
             }
         }
     }

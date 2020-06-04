@@ -1,13 +1,12 @@
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Recap.Two
 {
     public static class CollectionTester
     {
-        public static IEnumerable<(string type, long addTime, long lookupTime)> TestCollections(long numberOfElements)
+        public static IEnumerable<(string type, long addTime, long lookupTime, long enumerateTime)> TestCollections(long numberOfElements)
         {
             IList<string> strings = GetRandomStrings(numberOfElements);
             long listAddTime = 0;
@@ -19,24 +18,34 @@ namespace Recap.Two
             long sortedSetAddTime = 0;
             long sortedSetLookupTime = 0;
 
-            // ***********
-            // TODO for each type of collection
-            // 1. Create an instance of the type of collection
-            // 2. Call AddStrings on the instance of the type and assign the result to a variable
-            // 3. Call LookupStrings on the instance of the type and assign the result to a variable
-            // Collections to test are:
-            //    - linked list (List<T>)
-            //    - doubley-linked list (LinkedList<T>)
-            //    - hash set (HashSet<T>)
-            //    - sorted set (SortedSet<T>)
-            // ***********
+            ICollection<string> myLinkedList = new List<string>();
             
-            var results = new List<(string type, long addTime, long lookupTime)>
+            ICollection<string> myDoubleList = new LinkedList<string>();
+            
+            ICollection<string> myHashSet = new HashSet<string>();
+            ICollection<string> mySortedSet = new SortedSet<string>();
+
+            listAddTime = AddStrings(myLinkedList, strings);
+            linkedListAddTime = AddStrings(myDoubleList, strings);
+            hashSetAddTime = AddStrings(myHashSet, strings);
+            sortedSetAddTime = AddStrings(mySortedSet, strings);
+
+            listLookupTime = LookupStrings(myLinkedList, strings);
+            linkedListLookupTime = LookupStrings(myDoubleList, strings);
+            hashSetLookupTime = LookupStrings(myHashSet, strings);
+            sortedSetLookupTime = LookupStrings(mySortedSet, strings);
+
+            var listEnumerateTime = EnumerateCollection(myLinkedList);
+            var linkedListEnumerateTime = EnumerateCollection(myDoubleList);
+            var hashSetEnumerateTime = EnumerateCollection(myHashSet);
+            var sortedSetEnumerationTime = EnumerateCollection(mySortedSet);
+            
+            var results = new List<(string type, long addTime, long lookupTime, long enumerateTime)>
             {
-                (nameof(List<string>), listAddTime, listLookupTime),
-                (nameof(LinkedList<string>), linkedListAddTime, linkedListLookupTime),
-                (nameof(HashSet<string>), hashSetAddTime, hashSetLookupTime),
-                (nameof(SortedSet<string>), sortedSetAddTime, sortedSetLookupTime)
+                (nameof(List<string>), listAddTime, listLookupTime, listEnumerateTime),
+                (nameof(LinkedList<string>), linkedListAddTime, linkedListLookupTime, linkedListEnumerateTime),
+                (nameof(HashSet<string>), hashSetAddTime, hashSetLookupTime, hashSetEnumerateTime),
+                (nameof(SortedSet<string>), sortedSetAddTime, sortedSetLookupTime, sortedSetEnumerationTime)
             };
             return results;
         }
@@ -45,9 +54,8 @@ namespace Recap.Two
         {
             var stopwatch = Stopwatch.StartNew();
 
-            // ***********
-            // TODO implement adding each of the passed strings to the collection, one at a time.
-            // ***********
+            foreach(var item in strings)
+                collection.Add(item);
 
             stopwatch.Stop();
             return stopwatch.ElapsedMilliseconds;
@@ -57,9 +65,20 @@ namespace Recap.Two
         {
             var stopwatch = Stopwatch.StartNew();
 
-            // ***********
-            // TODO implement looking up (i.e. does the collection 'Contain' the string) the elements.
-            // ***********
+            foreach(var item in strings)
+                collection.Contains(item);
+
+            stopwatch.Stop();
+            return stopwatch.ElapsedMilliseconds;
+        }
+
+        private static long EnumerateCollection(ICollection<string> collection)
+        {
+            var stopwatch = Stopwatch.StartNew();
+
+            foreach(var item in collection)
+                // The line below is just to get the program to compile and run.
+                item.Trim();
 
             stopwatch.Stop();
             return stopwatch.ElapsedMilliseconds;
