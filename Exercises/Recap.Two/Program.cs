@@ -7,11 +7,13 @@ namespace Recap.Two
     public class Program
     {
         public static void Main(string[] args)
-        {            
-            if (args.Length > 0 && long.TryParse(args[0], out long numberOfElements))
-                PrintResult(CollectionTester.TestCollections(numberOfElements));
-            else
-                PrintResult(CollectionTester.TestCollections(1000000));
+        {
+            long numberOfElements;
+            if (args.Length == 0 || !long.TryParse(args[0], out numberOfElements))
+                numberOfElements = 1000000;
+
+            var result = CollectionTester.TestCollections(numberOfElements).GetAwaiter().GetResult();
+            PrintResult(result);
         }
 
         public static void PrintResult(IEnumerable<(string type, long addTime, long lookupTime, long enumerateTime)> results)

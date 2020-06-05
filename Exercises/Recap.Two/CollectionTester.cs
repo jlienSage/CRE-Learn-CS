@@ -1,12 +1,13 @@
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Recap.Two
 {
     public static class CollectionTester
     {
-        public static IEnumerable<(string type, long addTime, long lookupTime, long enumerateTime)> TestCollections(long numberOfElements)
+        public static async Task<IEnumerable<(string type, long addTime, long lookupTime, long enumerateTime)>> TestCollections(long numberOfElements)
         {
             IList<string> strings = GetRandomStrings(numberOfElements);
             long listAddTime = 0;
@@ -25,20 +26,35 @@ namespace Recap.Two
             ICollection<string> myHashSet = new HashSet<string>();
             ICollection<string> mySortedSet = new SortedSet<string>();
 
-            listAddTime = AddStrings(myLinkedList, strings);
-            linkedListAddTime = AddStrings(myDoubleList, strings);
-            hashSetAddTime = AddStrings(myHashSet, strings);
-            sortedSetAddTime = AddStrings(mySortedSet, strings);
+            var listAddTimeTask = Task.Run(() => AddStrings(myLinkedList, strings));
+            var linkedListAddTimeTask = Task.Run(() => AddStrings(myDoubleList, strings));
+            var hashSetAddTimeTask = Task.Run(() => AddStrings(myHashSet, strings));
+            var sortedSetAddTimeTask = Task.Run(() => AddStrings(mySortedSet, strings));
+            
+            listAddTime = await listAddTimeTask;
+            linkedListAddTime = await linkedListAddTimeTask;
+            hashSetAddTime = await hashSetAddTimeTask;
+            sortedSetAddTime = await sortedSetAddTimeTask;
 
-            listLookupTime = LookupStrings(myLinkedList, strings);
-            linkedListLookupTime = LookupStrings(myDoubleList, strings);
-            hashSetLookupTime = LookupStrings(myHashSet, strings);
-            sortedSetLookupTime = LookupStrings(mySortedSet, strings);
+            var listLookupTimeTask = Task.Run(() => LookupStrings(myLinkedList, strings));
+            var linkedListLookupTimeTask = Task.Run(() => LookupStrings(myDoubleList, strings));
+            var hashSetLookupTimeTask = Task.Run(() => LookupStrings(myHashSet, strings));
+            var sortedSetLookupTimeTask = Task.Run(() => LookupStrings(mySortedSet, strings));
 
-            var listEnumerateTime = EnumerateCollection(myLinkedList);
-            var linkedListEnumerateTime = EnumerateCollection(myDoubleList);
-            var hashSetEnumerateTime = EnumerateCollection(myHashSet);
-            var sortedSetEnumerationTime = EnumerateCollection(mySortedSet);
+            listLookupTime = await listLookupTimeTask;
+            linkedListLookupTime = await linkedListLookupTimeTask;
+            hashSetLookupTime = await hashSetLookupTimeTask;
+            sortedSetLookupTime = await sortedSetLookupTimeTask;
+
+            var listEnumerateTimeTask = Task.Run(() => EnumerateCollection(myLinkedList));
+            var linkedListEnumerateTimeTask = Task.Run(() => EnumerateCollection(myDoubleList));
+            var hashSetEnumerateTimeTask = Task.Run(() => EnumerateCollection(myHashSet));
+            var sortedSetEnumerationTimeTask = Task.Run(() => EnumerateCollection(mySortedSet));
+
+            var listEnumerateTime = await listEnumerateTimeTask;
+            var linkedListEnumerateTime = await linkedListEnumerateTimeTask;
+            var hashSetEnumerateTime = await hashSetEnumerateTimeTask;
+            var sortedSetEnumerationTime = await sortedSetEnumerationTimeTask;
             
             var results = new List<(string type, long addTime, long lookupTime, long enumerateTime)>
             {
@@ -77,8 +93,8 @@ namespace Recap.Two
             var stopwatch = Stopwatch.StartNew();
 
             foreach(var item in collection)
-                // The line below is just to get the program to compile and run.
-                item.Trim();
+            {                
+            }
 
             stopwatch.Stop();
             return stopwatch.ElapsedMilliseconds;
@@ -87,9 +103,8 @@ namespace Recap.Two
         private static IList<string> GetRandomStrings(long numberOfElements)
         {
             var strings = new List<string>();
-            var rand = new Random();
             for (var i = 0; i < numberOfElements; i++)
-                strings.Add(new string('*', rand.Next(0, 100)));
+                strings.Add(Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 12));
             return strings;
         }
     }
