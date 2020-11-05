@@ -32,9 +32,13 @@ namespace Recap.Three.Controllers
         }
 
         [HttpGet("{id}")]
-        public Bug GetBug(int id)
+        public IActionResult GetBug(int id)
         {
-            return _service.GetBug(id);
+            var bug = _service.GetBug(id);
+            if (bug == null)
+                return NotFound();
+            
+            return Ok(bug);
         }
 
         [HttpPost]
