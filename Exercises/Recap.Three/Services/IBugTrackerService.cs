@@ -4,7 +4,7 @@ using Recap.Three.Models;
 namespace Recap.Three.Services
 {
     /// <summary>
-    /// But tracker service interface.
+    /// Bug tracker service interface.
     /// </summary>
     public interface IBugTrackerService
     {
