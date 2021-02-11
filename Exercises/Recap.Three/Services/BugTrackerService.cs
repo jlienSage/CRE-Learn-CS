@@ -8,12 +8,10 @@ namespace Recap.Three.Services
         private int _nextId = 0;
 
         private ICollection<Bug> _bugs = new List<Bug>();
-        //public int Count => throw new System.NotImplementedException();
         public int Count => _bugs.Count;
 
         public int AddBug(Bug bug)
         {
-            //throw new System.NotImplementedException();
             bug.Id = _nextId++;
             _bugs.Add(bug);
             return bug.Id;
@@ -21,8 +19,6 @@ namespace Recap.Three.Services
 
         public Bug GetBug(int id)
         {
-            //throw new System.NotImplementedException();
-            //_bugs.FindIndex(id);
             foreach (Bug bug in _bugs)
             {
                 if (bug.Id == id)
@@ -41,21 +37,16 @@ namespace Recap.Three.Services
 
         public bool RemoveBug(int id)
         {
-            //throw new System.NotImplementedException();
-            //_bugs.Remove(GetBug(id)!=null);
             Bug bug = GetBug(id);
             if (bug == null)
             {
                 return false;
             }
-            //bool result =  _bugs.Remove(bug);
-            //return result;
             return _bugs.Remove(bug);
         }
 
-        public Bug UpdateBug(Bug bug)
+        public  Bug UpdateBug(Bug bug)
         {
-            //throw new System.NotImplementedException();
             Bug bugToUpdate = GetBug(bug.Id);
             bugToUpdate.Description = bug.Description;
             bugToUpdate.IsFixed = bug.IsFixed;
