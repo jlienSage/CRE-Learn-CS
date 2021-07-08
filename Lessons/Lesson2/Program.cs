@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Lesson2
 {
@@ -6,12 +6,36 @@ namespace Lesson2
     {
         static void Main(string[] args)
         {
-            var palindrome = args[0].ToCharArray();
+            //creating an array of char with parameter past into args
+            char[]checkPalindrome = args[0].ToCharArray();
 
-            // TODO: determine whether or not "palindrome" is, in fact, a palindrome.
-            // Print a friendly message.
+            //initalizing variables
+            int backOfArray = checkPalindrome.Length-1;
+            int i =0;
+            Boolean flag = true;
 
-            Console.WriteLine("Incomplete :(");
+            while(flag)
+            {
+              if(checkPalindrome[i]==checkPalindrome[backOfArray])  
+              {
+                 if (i==checkPalindrome.Length-1 && backOfArray==0)
+                 {
+                    Console.WriteLine("Yes the text entered is a palindrome");
+                    flag = false;
+                 }
+                 
+                  i++;
+                  backOfArray--;
+                   
+              } 
+              else
+              {
+                  Console.WriteLine("No the text entered is not a palindrome");
+                  flag = false;
+              }
+              
+            }
+
         }
     }
-}
+ }
